@@ -1,1 +1,1 @@
-# tus_skript
+# Skript für Thermodynamik und Statistik.
