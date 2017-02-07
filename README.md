@@ -1,1 +1,1 @@
-# Skript für Thermodynamik und Statistik.
+# Mitschrift von Thermodynamik und Statistik.
