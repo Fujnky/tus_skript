@@ -1,0 +1,147 @@
+\section{Quantenmechanik identischer Teilchen}
+\subsection{Vielteilchen-Hilbertraum}
+
+\begin{align}
+    N \gg 2
+\end{align}
+Sind Teilchen unterscheidbar?
+\begin{itemize}
+    \item Ja, bei unterschiedlichen Gasen $\ce{N2}, \ce{O2}, e^{-}, p^{+}$
+    \item Nein bei identischen Molekülen 
+\end{itemize}
+
+\subsection{Produktraum für N verschiedene Teilchen}
+\begin{align}
+    N=1: \quad \underarrow{e^-}{S=\sfrac{1}{2}\quad\quad} : \underarrow{H_1}{\quad N=1} &= \mathbb{L}_2 (\underarrow{\mathbb R^3}{V}) \otimes \mathbb C^{2s+1} \quad S=\text{Spin}\\
+    \hat S^2 &= S(S+1) \\
+    H_N &= H_1^{(1)} \otimes H_1^{(2)} \otimes H_1^{(3)} ... \otimes H_1^{(N)}\\
+    \Ket{\psi_1, \psi_2, ..., \psi_N} &= \Ket{\psi_1} \cdot \Ket{\psi_2} \times \Ket{\psi_3} ... \Ket{\psi_N} \\
+    i \hbar \partial_t \Ket{\psi}_N &= \hat H \Ket{\psi}_N
+\end{align}
+
+\subsection{Identische Teilchen}
+$N$ Teilchen: ununterscheidbar. \\
+$\Rightarrow$ Symmetrien unter Teilchenvertauschung \\
+Orts-Spin-Variable: $\xi_i = (\vec r_i, \sigma_i), \quad \sigma_i = -I, ..., +I$\\
+$N$ Teilchen: $\xi_1, \xi_2, ..., \xi_N$
+
+\begin{align}
+    P&: \text{Permutation} \\
+    P &= \left(\begin{matrix} 1 & 2 & 3 & ... & N \\ P(1) & P(2) & P(3) & ... & P(N) \end{matrix}\right) \\
+\intertext{Gruppe $\mathcal{S}_n$: Symmetrische Gruppe aller Permutationen von N} \\
+    \#P &= N!
+\intertext{Ortsdarstellung: Wellenfunktion}
+    \hat U_P \psi(\xi_1, \xi_2, \xi_3, ..., \xi_N) &= \psi (\xi_{P^{-1}(1)}, \xi_{P^{-1}(2)}, ..., \xi_{P^{-1}(N)})
+\intertext{Zustand}
+    \hat U_P \ \Ket{\psi_{n_1}}^{(1)} \Ket{\psi_{n_2}}^{(2)} \cdots \Ket{\psi_{n_N}}^{(N)} 
+    &= \Ket{\psi_{n_{P^{-1}(1)}}}^{(1)} \Ket{\psi_{n_{P^{-1}(2)}}}^{(2)} \cdots \Ket{\psi_{n_{P^{-1}(N)}}}^{(N)}
+\intertext{$P$ zerlegbar in ein Produkt von Transpositionen $\hat T _ {ij}: i \to j, j\to i$}
+    (\hat T_{ij})^2 &= \hat{\mathbb 1} \\
+    \hat U_{T(P)} \Ket{\psi} &= \symup{e}^{i \alpha_{T(P)}} \Ket{\psi} \\
+    \hat U_T^2 \Ket{\psi} &= \Ket{\psi} = \symup{e}^{2i \alpha T} \Ket{\psi} \\
+    \Rightarrow e^{2i \alpha_T} &= 1 \Rightarrow \symup{e}^{i \alpha_T} = \pm 1 \\
+    \text{Transposition: } T_{ij} &= T_{ai} T_{1j} T_{12} T_{1j} T_{2i} \\
+    \hat U_{T_{ij}} \Ket{\psi} &= (\symup{e}^{i \alpha_{T_{1j}}})^2 (\symup{e}^{i \alpha_{T_{2i}}})^2 \symup{e}^{i \alpha_{T_{ij}}} \Ket{\psi}=\symup{e}^{i \alpha_{T_{ij}}} \Ket{\psi} 
+\intertext{$\alpha_T$ ist universell für alle Indizes}
+    \Rightarrow S &= \symup{e}^{i \alpha_T} = \begin{cases} 1 & \text{fest} \\ -1 \end{cases} \\
+\intertext{Anzahl der Transpositionen in $P: \chi_p$}
+    \Aboxed{\hat U_P \Ket{\psi} &= S^{\chi_p} \Ket{\psi}} \\ 
+    s &= 1 \quad \text{Bosonen} \quad I = 0, 1, 2,...\\
+    s &= -1 \quad \text{Fermionen} \quad I = \sfrac12, \sfrac32, \sfrac52, ...
+\end{align}
+ 
+\paragraph{Physikalische Zustände $\Ket{\Phi}, \Ket{\psi}$} 
+Operator: $\hat O$
+\begin{align}
+    \Braket{\psi|\hat O|\Phi} &= \Braket{\hat U_P \psi | \hat O | \hat U_P \hat \Phi} = \Braket{\psi | U_P^\dagger \hat O \hat U_P | \Phi}\\
+    \Rightarrow \hat O &=  U_P^\dagger \hat O U_P \quad \text{Physikalisch relevanter Operator} \\
+    \text{Beispiel: } \hat T &= \sum_{j=1}^N = \frac1{2m} \vec{ \hat p_j} ^2 \\
+    \hat V &= \sum^N_{j=1} V(\vec r_j) \\
+    \hat W &= \frac12 \sum_{i\neq j} V(|\vec r_i - \vec r_j|)
+\end{align}
+Physikalischer Sektor des Produkt-Hilbertraums  $\mathbb H_N$ 
+\begin{align} 
+    \mathbb H_N \supseteq \mathbb{H}_\text{phys} (N) &= \mathbb H_\text{phys}^{S=-1} \oplus \mathbb H_\text{phys}^{S=+1}\\
+    \intertext{Symmetrieoperator: $\hat S_S$}
+    \hat S_S &= \frac1{N!} \sum_{p \in \mathcal S_N} S^{\chi_p} \hat U_p\\
+    \Ket{\psi} &\longrightarrow \hat S_S \Ket{\psi} \in \mathbb{H}_\text{phys}^S(N)\\
+    \hat S_S^2&=\frac1{(N!)^2}\sum_{P,Q\in \mathcal S_N} \underbrace{S^{\chi_P + \chi_Q}}_{S^{\chi_R}} \underbrace{\hat U_P \hat U_Q}_{\hat U_R} = \frac{N!}{(N!)^2} \sum_{R \in \mathcal S_N} S^{\chi_R} \hat U_R = \hat S_S \\
+    \mathcal S_N \quad \text{Gruppe:  } R &= P \circ Q\\
+    \chi_R &= \chi_P + \chi_Q\\
+\end{align}
+Ausgangspunkt: Produktbasis $ \Ket{\psi_{n_1}}^{(1)} \Ket{\psi_{n_2}}^{(2)} \cdots \Ket{\psi_{n_N}}^{(N)}$
+\begin{align}
+    \Ket{\psi_{n_1}},\Ket{\psi_{n_2}},...,\Ket{\psi_{n_N}} &\equiv \underarrow{C}{\text{Normierung}}\hat S_s\left[\Ket{\psi_{n_1}}^{(1)}\Ket{\psi_{n_2}}^{(2)}...\Ket{\psi_{n_N}}^{(N)}\right] \\
+    1 = \Braket{\psi_{n_1} ...\psi_{n_N} |\psi_{n_1} ...\psi_{n_N}} &= |C|^2 \underbrace{[...]}_{\hat S_S^\dagger = \hat S_S} \underbrace{\hat S_S \hat S_S}_{\hat S_S} [...]\\
+    &= |C|^2 \frac1{N!} \sum_{p \in \mathcal S_N} \Bra{\psi_{n_N}^{(N)}} \cdots \Braket{\psi_{n_1}^{(1)}|\hat U_p|  \psi_{n_1}}\Ket{\psi_{n_2}}^{(2)} \cdots \Ket{\psi_{n_N}}^{(N)} S^{\chi_p}
+\end{align}
+Fermionen: $S=-1, n_1 \neq n_2, ...$ paarweise verschieden. Nur $\hat U_P = \hat U_{\hat \mathbb 1}$ trägt bei!
+\begin{align}
+    1 = \frac{|c|^2}{N!} &\Rightarrow |c| = \sqrt{N!}\\
+    \Ket{\psi_{n_1} ... \psi_{n_N}} &= \frac{1}{\sqrt{N!}} \sum_{P \in \mathcal S_P} (-1)^{\chi_P} \hat{U}_P \ \Ket{\psi_{n_1}}^{(1)}\Ket{\psi_{n_2}}^{(2)} \cdots \Ket{\psi_{n_N}}^{(N)}
+\end{align}
+\begin{align}
+    N&=2\\
+    \Ket{n_1, n_2} &= \frac1{\sqrt{2}} \left(\Ket{n_1}^{(1)} \Ket{n_2}^{(2)} - \Ket{n_2}^{(1)}\Ket{n_1}^{(2)}\right) \\
+&\text{Slater-Determinante, Pauliprinzip}
+\end{align}
+
+\subsection{Fockraum}
+
+\begin{align}
+    \intertext{Fermionen: $S=-1$}
+    \text{N Teilchen: }\Ket{\psi}_S &= \sum_{p \in \mathcal S_N} \frac1{\sqrt{N!}} (-1)^{\chi_p} \hat U_p \Ket{\psi_{n_1}}^{(1)} \ket{\psi_{n_2}}^{(2)} \cdots \ket{\psi_{n_N}}^{(N)}\\
+    \intertext{Bosonen: $S=1$}
+    \Ket{\psi}_{+1}^{(N)} &= C \sum_{p \in \mathcal S_N} \frac1{\sqrt{N!}} \hat U_p \Ket{\psi_{n_1}}^{(1)} \ket{\psi_{n_2}}^{(2)} \cdots \ket{\psi_{n_N}}^{(N)} 
+\end{align}
+
+\paragraph{Fockraum }
+\begin{align}
+    \mathcal F_+ (\mathbb H) &= \mathbb{H}_1 \oplus \mathbb H^{(+)}_\mathrm{phys} (2) \oplus ... \oplus \mathbb H ^+ (N) \oplus ... \\
+    \mathcal F_- (\mathbb H) &= \mathbb{H}_1 \oplus \mathbb H^{(-)}_\mathrm{phys} (2) \oplus ... \oplus \mathbb H ^- (N) \oplus ... 
+\end{align}
+\paragraph{Besetzungszahloperator (-Basis)}
+\begin{align}
+    \hat n_i
+\intertext{Besetzungszahl Basis}
+    \Ket{\psi}=&\Ket{n_1,n_2,n_3,...,n_N,...}\\
+    \hat n_i\Ket{\psi}=&n_i\Ket{n_1,n_2,...,n_N,...}\\
+    \text{Fermionen:} & n_i=0,1\\
+    \text{Bosonen:}   & n_i=0,1,2,...\\
+    \Aboxed{N=\sum_{i=1}^{\infty}=n_i} \quad ,\quad  \hat N=\sum_{i=0}^{\infty} \hat n_i 
+\end{align}
+Erzeugen und vernichten:
+\begin{align}
+    \hat n_i &= c_i^\dagger c_i \quad \text{Fermionen}\\
+\end{align}
+
+\begin{enumerate}
+    \item 
+        \begin{align}
+                \underarrow{\hat c_i}{\text{vernichte Fermionen im Orbital}\Ket{\psi_i}} \Ket{\psi(N)} \in \mathbb H^- (N-1) \quad \text{oder} = 0
+        \end{align}
+
+    \item
+    \begin{align}
+         \underarrow{\hat{c_i}^\dagger}{\text{erzeuge Fermion mit Basis} \Ket{\psi_i}} (c_i \Ket{\psi(N)} \in \mathbb H^- (N) \quad (\text{oder} = 0) \\
+         \hat n_i\Ket{\psi(N)}_s=n_i\Ket{\psi(N)}_s
+   \end{align}
+\end{enumerate}
+
+\paragraph{Pauliprinzip}
+\begin{align}
+    \underbrace{c_i^\dagger c_i^\dagger}_{= 0}\left(\Ket{\psi(N)}_{S=-1}\right)&=0\\
+    \underbrace{c_i c_i}_{=0} (\Ket{\psi(N)}) &= 0\\
+    i \neq j: \quad c_j^\dagger+ c_i^\dagger \Ket{\psi(N)} &= -c_i^\dagger c_j^\dagger \Ket{\psi(N)} \\
+    \Rightarrow c^\dagger_j c_i^\dagger + c_i^\dagger c_j^\dagger &= 0\\
+\intertext{Antikommutator}
+    \{A, B\} &= AB + BA \\
+    \{c_i^\dagger, c_j^\dagger\} &= 0 = \{c_i, c_j\}\\
+    c_i^\dagger c_j + c_j c_i^\dagger &= \delta_{i j}\\
+    \Rightarrow \{c_i,c_j^\dagger \}&=\delta_{i j}\\
+    \Ket{\psi}_S&=\left(\prod_{i=1}^N c_{n_i}^\dagger \right)\Ket{0}\\
+    \text{Boson: } [b_i,b_j^\dagger]&=\delta_{i j}\\
+    \hat n_i &= b_i^\dagger b_i
+\end{align}
+
+

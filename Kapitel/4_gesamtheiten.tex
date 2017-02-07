@@ -1,0 +1,355 @@
+\section{Statistische Gesamtheiten oder Gleichgewichtsensembles}
+
+QM: Observable: $\hat O_1, \hat O_2,..., \hat O_r$
+
+
+\begin{itemize}
+    \item $\hat O_1,...\hat O_S$: Durch ein Bad reguliert $\Rightarrow f_i = <\hat O_i>$
+    \item $\hat O_{S+1},\hat O_{S+2},...,\hat O_\gamma$:  scharfe Erwartungswerte
+\end{itemize}
+
+\subsection{Generalisiertes Gibbs-Ensemble}
+Funktional
+\begin{align}
+    \Phi [\hat \rho_S] &= -k_\text{B} \left[\Braket{\ln(\hat\rho} + \sum_{j=0}^S \lambda_j \left(\Braket{\hat O_j} -f_j\right)\right]\\
+    S \text{maximal} &\Rightarrow \delta\Phi[S_i]\\
+    \delta \Phi_S[\rho_j] &= -k_\text{B} \Tr\left[\delta \rho_S\left[\ln(\rho_j) +1 + \sum_{j=0}^S \lambda_j \hat O_j\right]\right] =0\\
+    \Rightarrow \hat \rho_S &= \frac{1}{Z_S} \symup{e}^{-\sum_{j=1}^S \lambda_j \hat O_j}\\
+    Z_S &= \exp(+(1+\lambda)) = \Tr\left[\exp\left(\sum_{j=1}^S \lambda_j \hat O_j\right)\right]\\
+    \Braket{\hat O_j}&=\Tr[\hat \rho_S \hat O_j]=f_j \quad j=1,...,S\\
+    Z_S&=Z(\underbrace{\lambda_1, \lambda_2,...,\lambda_S}_\text{Äußere Parameter},f_{S+1},...,f_\gamma)
+\end{align}
+
+\begin{align}
+    \frac{\partial \ln(Z_S)}{\partial\lambda_0} &= \frac{1}{Z_S} \frac{\partial}{\partial \lambda_j} \Tr\left[\symup{e}^{\sum_{j=1}^S \lambda_j \hat O_j }\right] = -\Braket{O_j} = -f_j\\
+    S_S &= -k_\text{B} \Tr\left[\hat \rho (-\sum_{j=1}^S \lambda_j \hat O_j -\ln(Z_S)\right]\\
+        &= k_\text{B} \left(\underbrace{ln(Z_S}_{1+\lambda_0}+\sum_{j=1}^{S}\lambda_j
+        \underbrace{\Braket{\hat O_j}}_{f_j}\right)\\
+    \Aboxed{&\frac{\partial S_S}{\partial  f_j}=k_\text{B}\lambda_j} \\
+    \text{Spezialfall: } s &= r: \quad Z_r = Z(\lambda_1,...\lambda_r)\\
+    \text{Da } \lambda_1,...\lambda_r \text{intensiv } &\Rightarrow Z_r \text{intensiv}\\
+    &\Rightarrow \lim_{N \to \infty} \frac{1}{N} Z_r = 0 \\
+    &\Rightarrow S_r \stackrel{N \to \infty}{=} \sum_{j = 1}^r \frac{\partial S_r}{\partial  f_j} f_j
+\end{align}
+\begin{align}
+\intertext{Duhen-Gibbs-Relation:}
+    \Aboxed{\Braket{\hat H} - \mu \Braket{\hat N} + p \Braket{\hat V} - TS &= 0}
+\end{align}
+$\mu$: chemisches Potential. \\
+Großkanonische Gesamtheit: Teilchenzahl variabel
+
+\subsection{Geisterkapitel}
+\subsection{Großkanonische Gesamtheit}
+\begin{align}
+    Z_\text{GK} &= \Tr [\e^{-\beta (\hat H-\mu \hat N)}] \\
+    \hat O_1 &= \hat H  \longrightarrow \lambda_1=\beta\\
+    \hat O_2 &= \hat N  \longrightarrow \lambda_2 = -\beta \mu \quad \mu:\text{chemisches Potential} \\
+    \mu \hat N &\longrightarrow \sum_n \mu_n \hat N_n\\
+\end{align}
+\begin{align}
+    \frac{\partial S}{\partial E} &= \frac{1}{T}=k_\text{B}\lambda_1 &
+    \frac{\partial \ln(Z_\text{GK})}{\partial \beta} &= -E \\
+    \frac{\partial S}{\partial N }&=k_\text{B}\lambda_2=-\frac{\mu}{T} &
+    \frac{\partial \ln(Z_\text{GK})}{\partial(\beta\mu)}&=N\\
+\end{align}
+\begin{align}
+    \frac{\partial E}{\partial \beta}&=
+    \frac{\partial}{\partial\beta}\left(\frac{1}{Z_\text{GK}} \Tr[\symup{e}^{-\beta(\hat H-\mu\hat N)}\hat H]\right)\\
+    &=-\frac{1}{Z_\text{GK}}\Tr[H(\hat H-\mu\hat N)\, \symup{e}^{-\beta(\hat H-\mu\hat N)} ]\\
+    &\quad+ \underbrace{\frac{1}{Z_\text{GK}^2} \Tr \left[+(\hat H-\mu \hat N) \e^{-\beta(H -\mu N)}\right]\Tr[\e^{-\beta(H -\mu N)} \hat H]}_{\Braket{(\hat H - \mu N)} \Braket{\hat H}}\\
+    &= -[\Braket{H^2} -\mu \underbrace{\cancel{\Braket{\hat H \hat N}}}_{\Rightarrow \Braket{\hat H}\Braket{\hat N} \text{ mit } N \rightarrow \infty} -\Braket{\hat H}^2 + \mu \cancel{\Braket{\hat N}} \Braket{H} ] = - \Braket{(\increment \hat H)^2} \leq 0
+\end{align}
+
+spezifische Wärme bei $V=$ const.
+\begin{align}
+    C_V &= \frac{\partial E}{\partial T} = \frac{\partial B}{\partial T} \frac{\partial E}{\partial \beta}
+    = -k_\text{B} \beta ^2 \left(- \Braket{(\increment \hat H)^2}\right) = k_\text{B} \beta^2 \Braket{(\increment H)^2} \ge 0\\
+\intertext{$C_V$ ist proportional zur Energiefluktuation}
+    &T \to \infty: \Braket{(\increment H)^2} \propto T^2 \Rightarrow C_V = \text{const.}
+\end{align}
+
+\begin{align}
+    \text{Da}\ C_V &= \frac{\partial E}{\partial T} \Rightarrow C_V \propto N (V) \\
+    &\Rightarrow \Braket{(\increment \hat H)^2} \propto N \\
+   \frac{\sqrt{\Braket{(\Delta \hat H)^2)}}}{\Braket{H}} &\propto \frac{\sqrt{N}}{N} \propto \frac{1}{\sqrt{N}}
+\end{align}
+
+\subsection{Thermodynamische Potentiale}
+\begin{itemize}
+    \item Mikrokanonische Ensemble:  $E, N, V$ fest: keine Bäder
+    \item Kanonisches Ensemble: $N,V$ fest: Wärmebad $T(\beta)$ 
+    \item Großkanonisches Ensemble:  $V$ fest: Wärmebad $T(\beta) Teilchenbad$
+\end{itemize}
+\begin{align}
+    Z_\text{MK} &= Z_\text{MK}(E, N, V)\\
+    Z_\text{K} &= Z_\text{MK}(T, N, V)\\
+    Z_\text{GK} &= Z_\text{GK}(T, \mu, V)
+\end{align}
+\begin{align}
+    \Aboxed{S_S &= k_\text{B} \ln(Z_S) + \sum_{j=1}^S \left( \frac{\partial S}{\partial f_j}\right) f_j} \quad f_j = \Braket{\hat O_j}\\
+    \intertext{$Z \rightarrow\ $Thermodynamische Potentiale}
+    \Phi_S &= - \frac{1}{\beta} \ln(Z_S)
+\end{align}
+\begin{itemize}
+  \item Freie Energie 
+    \begin{align}
+        F(T,N,V)&=-\frac{1}{\beta}\ln(Z_K(T,N,V))\\
+        F&=\Braket{\hat H}-TS
+    \end{align}
+\item Großkanonisches Potential
+    \begin{align}
+        \Phi (T, \mu, V) &= -\frac{1}{\beta} \ln(Z_\text{GK}) = \Braket{\hat H} - \mu \Braket{\hat N} - TS
+    \end{align}
+\item Großkanonisches Druckpotential
+    \begin{align}
+        K(T,\mu,p)=\Braket{H}-\mu\Braket{\hat N}+p\Braket{\hat V}-TS \Rightarrow\ \Aboxed{0=K}\\
+        \ln(Z_\text{Druck}(T, \mu ,p)) \propto \mathcal O(1) \quad \text{Duhen-Gibbs-Relation} 
+    \end{align}
+\item Druck-Ensemble zu fester Teilchenzahl
+    Freie Enthalpie
+    \begin{align}
+        G &= G(T, N, p) = -\frac{1}{\beta} \ln(Z_G(T, N, p)) = \Braket{H} + p\Braket{V} -TS  
+    \end{align}
+\end{itemize}
+Totales Differential
+\begin{align}
+    \dif K &= \left(\frac{\partial K}{\partial T}\right) \vert_{\mu,p} \dif T + \left(\frac{\partial K}{\partial M}\right) \dif M + \left(\frac{\partial K}{\partial p}\right) \dif p \\
+    \frac{\partial \ln(Z_S)}{\partial \lambda_j} &= - \Braket{\hat O_j}; \quad \quad K = -\frac{1}{\beta} \ln(Z_r(T,\mu, p))\\
+    \frac{\partial K}{\partial \mu} &= \frac{\partial(-\beta\mu)}{\partial\mu}
+    \frac{\partial K}{\partial(-\beta\mu)} = \cancel{-\beta} \left(\cancel{-}\frac{1}{\cancel \beta}\right) (-\Braket{\hat N}) = -N \\
+    \left( \frac{\partial K}{\partial p}\right) &= \frac{\partial (\beta p)}{\partial p} \frac{\partial K}{\partial(\beta p)} = \beta \left(- \frac{1}{\beta}\right) (-\Braket{\hat V}) = V\\
+    \left(\frac{\partial K}{\partial T}\right)_{\mu,p} &= \left(\frac{\partial K}{\partial T}\right)_{\beta\mu, \beta p\ \text{const.}} + \frac{\partial (-\beta \mu)}{\partial T} \frac{\partial K}{\partial (-\beta \mu)}
+    + \frac{\partial (\beta p)}{\partial T} \frac{\partial K}{\partial (\beta p)} = ... = -S \checkmark
+\end{align}
+\begin{align}
+    \dif K &= - S \dif T - N \dif \mu + V \dif p = 0 \quad \text{im thermodyn. Gleichgewicht}\\
+    K&=K(T,\mu,p)\\
+\intertext{$\Rightarrow$ Großkanonisches Potential kann über eine Legendre-Trafo gewonnen werden}
+    \Phi(T, \mu, V) &= K -pV \stackrel{k=0}{=} -pV\\
+    \frac{\partial K}{\partial p} &=V \\
+    \dif \Phi &= \dif K -\dif(pV) = - s\dif T - N \dif \mu + \cancel{V \dif p} - (p \dif V + V \cancel{ V\dif p })\\ 
+    &= - S \dif T - N \dif \mu - p \dif V\\
+    \Rightarrow \Phi &= \Phi(T, \mu, V)\\
+    \Rightarrow \frac{\partial \Phi}{\partial T} &= -S; \frac{\partial \Phi}{\partial \mu} = -N; \frac{\partial \Phi}{\partial V} = -p
+\end{align}
+
+\subsubsection{Zustandsgleichungen}
+
+\begin{align}
+    \Braket{\hat O _j} = f_j = - \frac{\partial \ln Z_S}{\partial \lambda_j}
+\end{align}
+\paragraph{Intensive Größen?}
+\begin{align}
+    p &= \frac{\partial F}{\partial V} = \frac{1}{\beta} \frac{\partial \ln(Z(V,T))}{\partial V}\\
+    \Aboxed{p &= p(V,T)} \quad \text{Zustandsgleichung}
+\end{align}
+Ideales Gas im Volumen $V$, mit $N$ Atomen
+\begin{align}
+    Z_\text{kan} &\propto V^N \Chi (E(T))\\
+    \ln(Z_\text{kan}) &= N \ln(V) + \ln(\Chi(E(T))) + \text{const} \\
+    p &= \frac{1}{\beta} \frac{\partial \ln(Z)}{\partial V} = \frac{N}{\beta V} = \frac{N k_\text{B} T}{V}\\
+    \Rightarrow \Aboxed{p V &= N k_\text{B} T}
+\end{align}
+
+\subsubsection{Stabilität thermischer Gleichgewichte und Krümmung thermodynamischer Potentiale}
+
+Sei $\Phi(X,Y,z)$ ein Potential
+\begin{itemize}
+  \item $X, Y$: extensive Größen
+  \item $z$: intensive Größen
+\end{itemize}
+\paragraph{Hinweis}
+Wir sind uns unsicher bei der Groß- und Kleinschreibung der Größen $X, Y, Z, x, y, z.$
+\begin{align}
+    \Phi(\lambda X, \lambda Y, z) &= \lambda \Phi(x, y, z) \\
+    \Rightarrow \Phi(X, Y, z) &= \Phi\left(\frac{X}{2}, \frac{Y}{2}, z\right) + \Phi\left(\frac{X}{2}, \frac{Y}{2}, z\right) \\
+    \Phi(X, Y, z) &\leq \Phi\left( \frac{X}{2} - \delta x, \frac{y}{2}, z \right) + \left( \frac{x}{2} + \delta x, \frac{Y}{2}, z \right)\\
+    &= \Phi \left(\frac{X}{2}, \frac{Y}{2},z\right) + \cancel{\frac{\partial \Phi}{\partial X} \delta X} + \frac{1}{2} \frac{\partial^2 \Psi}{\partial X^2} (\delta X)^2 + \mathcal O((\delta x)^3)\\
+    &+ \Phi \left(\frac{X}{2}, \frac{Y}{2},z\right) - \cancel{\frac{\partial \Phi}{\partial X} \delta X} + \frac{1}{2} \frac{\partial^2 \Phi}{\partial X^2} (\delta X)^2 + \mathcal O((\delta X)^3)\\
+    &= \Phi(X, Y, z) + \frac{\partial^2 \Phi}{\partial x} ( \delta X)^2\\
+    \Rightarrow 0 \leq \left( \frac{\partial ^2 \Phi}{\partial X^2}\right)
+\end{align}
+
+Zweite Ableitung von $\Phi$ nach extensiver Größe ist immer Positiv.
+
+\paragraph{Legendre-Trafo}
+\begin{align}
+    \tilde \Phi (x, Y, z) &= \Phi(x, y, z) - xX \\
+    x &\equiv \frac{\partial \Phi}{\partial X} \\
+    \Rightarrow \frac{\partial x}{\partial X} = \frac{\partial ^2 oh\Phi}{\partial x ^2} \geq 0
+    \dif \Phi &= \left(\frac{\partial \Phi}{\partial X}\right)_{Y,z} \dif X + \cancel{\left(\frac{\partial \Phi}{\partial Y}\right)_{X, z} \dif Y} + \cancel{\left(\frac{\partial \Phi}{\partial z}\right)_{X,Y} \dif z}
+\intertext{Jetzt $Y$, $z$ konstant, $\dif Y = 0$, $\dif z = 0$}
+    &= x \dif X
+\end{align}
+\begin{align}
+    \dif \tilde \Phi &= \dif \Phi - \dif(x X) \\
+    &= \cancel{x\dif X} - (X\dif x + \cancel{x \dif X}) \\
+    &= -X\dif x \\
+    \frac{\partial \tilde \Phi}{\partial x} &= -X \\
+    \Rightarrow \frac{\partial^2 \tilde \Phi}{\partial x^2} &= - \frac{\partial X}{\partial x} \leq 0\\
+\intertext{Zweite Ableitung von $\tilde \Phi$ nach einer intensiven Größe ist negativ}
+\end{align}
+
+\subsubsection{Abgeleitete Größe}
+\begin{align}
+    \frac{\partial F}{\partial T} \biggr\rvert_{V, \mu} &= -S\\
+    \frac{\partial G (T, N, p)}{\partial p} &= V \\
+    \frac{\partial \Phi(T, \mu, V}{\partial \mu} &= - N\\
+    \intertext{Wärmekapazität $C$}
+    \increment Q &= \increment U - \increment W\\
+    \increment Q &= C \increment T\\
+    \intertext{innere Energie $U(S, V)$}
+    \dif U &= T \dif S - p \dif V
+\end{align}
+Jetzt $\dif V = 0$
+\begin{align}
+    \delta W &= -p\dif V = 0 \\
+    \underbrace{C_V}_{\text{konstantes Volumen}} &= \lim_{\increment T \to 0} \frac{\increment Q}{\increment T} = \left(\frac{\partial U}{\partial T}\right)_V\\
+    &= \left(\frac{\partial U}{\partial S}\right)_V \left(\frac{\partial S}{\partial T}\right) = T \left( \frac{\partial S}{\partial T}\right)_V\\
+    \intertext{Alternative:}
+    F &= U - TS \Rightarrow U = F - T \left(\frac{\partial F}{\partial T}\right)_V \\
+    C_V &= \left(\frac{\partial U}{\partial T}\right)_V = \frac{\partial}{\partial T} \left( F - T\frac{\partial F}{\partial T}\right) = \cancel{\frac{\partial F}{\partial T}} - \cancel{\frac{\partial F}{\partial T}} - T \frac{\partial^2 F}{\partial T^2}\\
+    C_V &= -T\underbrace{\left( \frac{\partial^2 F}{\partial T^2}\right)}_{\leq 0} \geq 0
+\end{align}
+
+Teiloffenes System: $p = $ konst.
+
+\begin{align}
+    C_p &= \lim_{\increment T \to 0} \frac{\increment Q}{\increment T} = T \left(\frac{\partial S}{\partial T}\right)_p\\
+    \intertext{Potential zu $p=$ konst.}
+    \text{Enthalpie: } \dif H &= \dif U + \dif (pV) = T\dif S + V \dif p\\
+    \underbrace{C_p}_{\text{konst. Druck}} &= \lim_{\increment T \to 0} \frac{\dif H}{\dif T} = \left(\frac{\partial H}{\partial T}\right)_p = \left(\frac{\partial H}{\partial S}\right)_p \left(\frac{\partial S}{\partial T}\right)_p = T \left(\frac{\partial S}{\partial T}\right)_p\\
+    \Rightarrow \Aboxed{\delta Q &= T \dif S} 
+\end{align}
+
+\paragraph{Kompressibilität}
+\begin{align}
+    \varkappa &= -\frac{1}{V} \frac{\partial V}{\partial p} \quad \text{Material-Konstante ist unabhängig vom Volumen}\\
+    \intertext{Isotherme Kompressibilität}
+    \underbrace{\varkappa_T}_{T= \text{Konst.}} &= - \frac{1}{V} \left(\frac{\partial V}{\partial p}\right)|_{T,N} = -\frac{1}{V} \frac{\partial^2 G}{\partial p^2}|_{T,N} \geq 0
+\end{align}
+Adiabatische Kompressibilität : $S =$ konst.
+\begin{align}
+    \varkappa_S &= -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_{S,N} = -\frac{1}{V} \frac{\partial^2 H(S, N, p)}{\partial p^2} \geq 0
+\end{align}
+\paragraph{Kettenrelation}
+$x,y,z$
+\begin{align}
+    &\left(\frac{\partial x}{\partial y}\right)_z \left(\frac{\partial y}{\partial z}\right)_x \left(\frac{\partial z}{\partial x}\right)_y = -1 \\
+    &\left(\frac{\partial x}{\partial y}\right)_z = \left[\left(\frac{\partial y}{\partial x}\right)_z\right]^{-1}\\
+    &\left(\frac{\partial x}{\partial y}\right)_w  \left(\frac{\partial y}{\partial z}\right)_w =  \left(\frac{\partial x}{\partial z}\right)_w\\ 
+\intertext{$x = T, y=S, z=V$}
+    \frac{C_V}{C_p} 
+    = \frac{\cancel{T}\left(\frac{\partial S}{\partial T}\right)_V}{\cancel{T}\left(\frac{\partial S}{\partial T}\right)_p} 
+    &= \frac{\cancel{-}\left(\frac{\partial V}{\partial T}\right)_S \left(\frac{\partial S}{\partial V}\right)_T}{\cancel{-}\left(\frac{\partial p}{\partial T}\right)_S \left(\frac{\partial S}{\partial p}\right)_T} 
+    =\frac{\left(\frac{\partial V}{\partial T}\right)_S \left(\frac{\partial T}{\partial p}\right)_S}{\left(\frac{\partial V}{\partial S}\right)_T \left(\frac{\partial S}{\partial p}\right)_T} 
+    = \frac{-\frac{1}{V}}{-\frac{1}{V}} \frac{\left(\frac{\partial V}{\partial p}\right)_S}{\left(\frac{\partial V}{\partial p}\right)_T} \\
+    \Aboxed{\frac{C_V}{C_p} &= \frac{\varkappa_S}{\varkappa_T}}
+\end{align}
+\paragraph{Ausdehnungskoeffizient}
+\begin{align}
+    \alpha &= \frac{1}{V} \left(\frac{\partial V}{\partial T}\right)_{p,N}\\
+    \text{Freie Enthalpie: } G(T, N, p) \Rightarrow V &= \left(\frac{\partial G}{\partial p}\right)_{T,N}\\
+    \Rightarrow \alpha &= \frac{1}{V}\frac{\partial}{\partial T} \left(\left(\frac{\partial G}{\partial p}\right)_{T,N}\right) = \frac{1}{V} \frac{\partial^2 G}{\partial T \partial p}
+\end{align}
+Gemischte Ableitung $\Rightarrow$ Vorzeichen liegt \emph{nicht} fest.
+\subsubsection{Maxwell-Relationen}
+\begin{itemize}
+  \item Freie Energie: $F(T,V)$
+  \item Innere Energie: $U(S,V)$
+  \item Freie Enthalpie: $G(T,p)$
+  \item Enthalpie: $H(S,p)$
+\end{itemize}
+%Bild 12
+\begin{align}
+    \left(\frac{\partial U}{\partial S}\right) &= T ;& \frac{\partial U}{\partial V} &= -p
+\end{align}
+Potential $I(x,y)$ zwei mal stetig differenzierbar
+\begin{align}
+    \frac{\partial }{\partial y} \frac{\partial I}{\partial x} =  \frac{\partial }{\partial x} \frac{\partial I}{\partial y}\\
+    \frac{\partial }{\partial V} \left(\frac{\partial U(S,V)}{\partial S}\right) &= \left(\frac{\partial T}{\partial V}\right)_{S} = \frac{\partial}{\partial S} \left(\frac{\partial U }{\partial V}\right) = - \pdif{p}{S}[V]
+\end{align}
+\paragraph{Maxwell-Relationen}
+\begin{align}
+    U: & \quad \pdif{T}{V}[S] = -\pdif{p}{S}[V]\\
+    H: & \quad \pdif{T}{p}[S] = \pdif{V}{S}[p]\\
+    G: & \quad \pdif{V}{T}[p] = -\pdif{S}{p}[T]\\
+    F: & \quad \pdif{p}{T}[V] = \pdif{S}{V}[T]
+\end{align}
+
+\subsection{Zusammenhang zwischen kanonischer und großkanonischer Zustandssumme}
+
+\begin{align}
+    Z_\text{gk}(\beta,\mu) &= \Tr[\symup{e}^{-\beta(\hat{H}-\mu \hat{N})}] = \sum_{m=0}^{\infty} \symup{e}^{m \mu \beta} \Tr [\symup{e}^{-\beta H}]_m  =  \sum_{m=0}^\infty \underbrace{\symup{e}^{m\mu \beta}}_{Z^m} Z_k(\beta, m)\\
+    \intertext{mit $[\hat H, \hat N] = 0$}
+    \text{Fugazität: } z &= \e^{\beta \mu} = \sum_{m=0}^\infty z^m z_k(\beta, -m) \quad m: \text{Teilchenzahl}\\
+    \pdif{}{(\beta \mu)} &= \pdif{z}{(\beta \mu)} \pdif{}{z} = z\pdif{}{z}\\
+    \intertext{Mittlere Teilchenzahl $N$}
+    N &= \Braket{\hat N}_\text{gk} =\pdif{(\ln Z_\text{gk})}{(\beta \mu)} = Z \pdif{\ln Z_\text{gk} (\beta, Z)}{Z}
+    = \frac{1}{Z_\text{gk}} \sum_{m=1}^\infty m z^m Z_k(\beta, m)
+\end{align}
+
+\paragraph{Cauchyscher Integralsatz}
+
+\begin{align}
+    Z_\text{k}(\beta,m) &= \frac{1}{2\symup{\pi i}} \oint_r \dif z \ \frac{Z_\text{gk} (\beta, Z)}{Z^{m+1}}, \quad |z| < r < R < \infty\\
+    \text{mit}\quad z &= x + iy\\
+    \pdif{}{x}\left(\frac{Z_\text{gr}(\beta, x)}{x^{m+1}} \right) &= \frac{1}{x^{m+1}}\left(\pdif{Z_\text{gk}}{x} - (m+1)\frac{Z_\text{gk}}{x}\right) = 0 \quad \text{Minimum} \\
+    m+1 &= \frac{x}{Z_\text{gk}} \pdif{Z_\text{gk}}{x} = N = \Braket{N}_\text{gk}
+\intertext{Für $n \to \infty$: $m\hat = N$}
+\end{align}
+\begin{align}
+\intertext{Minimum ist für $x_0 = x_0(\beta, N) $ erhalten}
+    \frac{\partial^2}{\partial x^2}\left(\frac{Z_\text{gk}}{x^{m+1}}\right)_{x=x_0} &> 0\\
+    \intertext{$\frac{Z_\text{gk}(\beta, z)}{Z^{m+1}}$ \ ist holomorph auf dem Integrationsweg der Kreisscheibe ohne $z=0$}
+    \left(\pdif{^2}{x^2} + \pdif{^2}{y^2}\right) \frac{Z_\text{gk}(\beta, Z = x+ i y}{Z^{m+1}} &= 0 \\
+    \Rightarrow \pdif{^2}{y^2} \left(\frac{Z_\text{gk}}{Z^{m+1}}\right)_{x=x_0?} &< 0
+\end{align}
+%Bild 13
+
+Fugazität: $ Z = \e^{\beta \mu}$
+\begin{align}
+    Z_\text{GK} (\beta, z) &= \sum_{m=0}^\infty Z^m Z_\text{K} (\beta, m)\\
+    N &= \Braket{\hat N}_\text{gk} = Z \pdif{\ln(Z_\text{gk})}{Z} = \frac{1}{Z_\text{gk}}\sum_{m=1}^\infty m Z^m Z_\text{k} (\beta, m)\\
+    Z_K(\beta,m) &= \oint_{r<R}\frac{\partial Z}{2\pi i}\frac{Z_\text{gk}(\beta,Z)}{Z^{m+1}} \\
+    \pdif{}{z}\left( \frac{Z_\text{gk}(\beta, Z)}{Z^{m+1}}\right) &= 0 \\
+    \pdif{^2}{x^2} \left(\frac{Z_\text{gk}(\beta, Z)}{x^{m+1}}\right) &\geq 0
+    \frac{1}{x^{m+1}}\pdif{Z_\text{gk}}{x}-(m+1)\frac{Z_\text{gk}}{x^{m+2}}=\frac{1}{x^{m+1}}\underbrace{\left[\pdif{Z_\text{gk}}{x}-(m+1)\frac{Z_GK}{x})\right]}_{=0, \text{def.} x_0=x_0(\beta,N)}=0\\
+    m+1 &= \Braket{\hat N}_{Z = x_0}\\
+    \pdif{^2}{x^2} \left( \frac{Z_\text{gk}}{x^{m+1}}\right) &= \pdif{}{x} \left[ \frac{1}{x^{m+1}} [\,\,]\right] = \cancel{-(m+1) \frac{1}{x^{m+1}} [ \,\,]}_{x=x_0} + \frac{1}{x^{m+1}}\partial_x [\,\,]_{x=x_0}\\
+\intertext{Krümmung}
+    &= \frac{1}{x^{m+1}} \left[ \pdif{^2}{x^2} Z_\text{gk} + \underbrace{(m+1) \frac{Z_\text{gk}}{x^2} - \frac{m+1}{x}\partial_x Z_\text{gk}}_{\frac{1}{x}\cancel{[(m+1)\frac{Z_\text{gk}}{x}-\partial_x Z_\text{gk}]}-\frac{m}{x}\partial_x Z_\text{gk}}\right]\\
+    &= \frac{1}{x^{m+1}} \left[\pdif{^2}{x^2}Z_\text{gk}-\frac{m}{x}\partial_x Z_\text{gk} \right]\\
+    &= \frac{Z_\text{gk}}{x^{m+3}} \left[\frac{x^2}{Z_\text{gk}} \underbrace{\pdif{}{x^2} Z_\text{gk}}_{\sum_{m=2}^\infty m(m-1) Z^{m-2} Z_k(\beta, m) = \Braket{\hat N (\hat N -1)}} - \underbrace{m}_{\Braket{N} - 1} \underbrace{\frac{x}{Z_\text{gk}} \partial _x Z_\text{gk}}_{\Braket{\hat N}}\right]\\ 
+    &= \frac{Z_\text{gk}}{x^{m+3}} \left[ \Braket{\hat N ^2} - \Braket{N}^2\right] \\
+    P(m)&=\frac{Z^m Z_\text{k}(\beta,m)}{Z_\text{gk}}\\
+    \pdif{^2}{x^2} \left(\frac{Z_\text{gk}}{Z^{m+1}}\right) \bigg|_{x=x_0} &= \frac{(\increment N^2)}{x_0^2} \frac{Z_\text{gk}}{x_0^{m+1}} \geq 0\\
+\end{align}
+Relative Krümmung
+\begin{align}
+    \frac{x_0^2\pdif{^2}{x^2}(\frac{Z_\text{gk}}{\overline{x}^{m+1}})}{\frac{Z_\text{gk}}{x^{m+1}}}\Bigg|_{x=x_0} &= (\Delta N^2) \rightarrow \propto N\\
+    \Delta N &\propto \sqrt{N}\\
+    \text{Definiere: } I(Z) &= \frac{Z_\text{gk}(\beta, Z)}{Z^{m+1}}\\
+    \ln I(Z) &= \ln I(X_0) + (Z-X_0) \tdif{}{Z} \ln I(Z) \bigg|_{Z=X_0} \\
+    &\quad + \frac{1}{2} (Z-X_0^2) \tdif{^2}{Z^2} \ln I(Z) \bigg|_{Z=X_0} + \mathcal{O}((Z-X_0)^3)\\
+    \tdif{^2}{Z^2} \ln I(Z) &= ... =\left(\frac{\increment N^2}{X_0^2}\right) \\
+    \Rightarrow I(Z) &\approx I(x_0) \exp\left(\frac{\increment N^2}{2x_0^2}(Z-x_0)^2\right)\\
+    Z_\text{gk}(\beta, m)&= \frac{1}{2\symup{\pi}i} \oint \dif z \frac{Z_\text{gk}(\beta,z)}{z^{m+1}} \\
+    &= \frac{Z_\text{gk}(\beta,x_0)}{x_0^{m+1}} \int_{x_0 - i\infty}^{x_0 + i\infty} \frac{\symup{d}z}{2\symup{\pi i}} \exp\left(\frac{\increment N^2}{2 x_0} (z-x_0)^2\right)\\
+    &= \frac{Z_\text{gk}(\beta, X_0)}{X_0^{m+1}} \frac{\int_{-\infty}^{\infty}\dif y\frac{1}{2 \pi} \exp\left(-\frac{(\increment N)^2}{2 X_0^2}y^2\right)}{\frac{X_0}{2 \increment N}\frac{1}{\sqrt{\pi}}}\\
+    Z_\text{k}(\beta,m) &\approx \frac{Z_\text{gk}}{x_0^m} \frac{1}{2 \Delta N\sqrt{\pi}}\\
+    \frac{1}{m}\ln Z_\text{gk}(\beta,m)&=\frac{1}{m}\ln Z_\text{gk}-\underbrace{\ln(\symup{e}^{\beta\mu})}_{\beta\mu}-\underbrace{\cancel{\frac{1}{m}\ln(2\Delta N \sqrt{\pi})}}_{\text{für}\ m \to \infty}\\
+    \Delta N &\propto \sqrt{m}\\
+     &\Rightarrow \lim_{n \to \infty} \frac{1}{m}\ln\sqrt{m}\to 0\\ 
+    \ln (Z_\text{K}(\beta, \Braket{\hat N})) &= \ln (Z_\text{gk}(\beta, m)) - \beta \mu \underbrace{m}_{\Braket{N}}\\
+    \Aboxed{\ln Z_\text{gk} &= \ln Z_\text{k} + \beta \mu \Braket{\hat N}}
+\end{align}
+\paragraph{Entropie}
+\begin{align}
+    S_\text{k}[\hat\rho]&=-k_\text{B}\Tr[\hat\rho_\text{k}\ln\hat\rho_\text{k}]\\
+    &=-k_\text{B}\Tr\left[\frac{\symup{e}^{-\beta\hat H}}{Z_\text{k}} \ln \left(\frac{\symup{e}^{-\beta\hat H}}{Z_\text{k}}\right)\right]\\
+    &=k_\text{B}\beta\Braket{\hat H}+k_\text{B}\ln Z_\text{k}\\
+    S_\text{gk}[ \underbrace{\hat \rho_\text{gk}}_{\frac{\symup{e}^{-\beta (\hat H - \mu \hat N}}{Z_\text{gk}}}] &= k_\text{B} \beta \left(\Braket{\hat H} - \cancel{\mu\Braket{\hat N}} \right) + k_\text{B} \left(\ln(Z_\text{k}) + \cancel{\beta \mu \Braket{\hat N}}\right) = S_\text{k} + k_\text{B} \mathcal{O}(\ln (N))\\ 
+    \Aboxed{S_\text{gk}\tilde=S_\text{k}}\\
+    \S_\text{gk}("T,\underbrace{\mu}_{\mu(N,T)}")&=\S_\text{k}(T,N(\mu,T))
+\end{align} 

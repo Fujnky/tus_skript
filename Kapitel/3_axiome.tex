@@ -1,0 +1,126 @@
+\section{Axiome der Thermodynamik}
+
+\subsection*{Axiom 1: Gleichgewichtszustand}
+Es existiert ein spezieller Zustand eines einfachen Systems, der Gleichgewichtszustand genannt wird, welcher makroskopisch durch die innere Energie U , das Volumen V und die Gesamtzahlen $N_1, N_2, ..N_k$ der $k$ verschiedenen chemischen Komponenten des Systems
+vollständig bestimmt ist.
+
+\subsection*{Axiom 2: Postulate der Entropie-Maximierung}
+Es existiert eine Funktion, die Entropie genannt wird und eine Funktion der extensiven Parameter des Systems ist, die für alle thermodynamischen Zustände definiert ist und folgende Eigenschaft hat: Die Werte, die die extensiven Parameter annehmen in Abwesenheit von internen Zwangsbedingungen sind diejenigen, die die Entropie über die Menge der erlaubten thermodynamischen Zustände maximieren.
+
+\subsection*{Axiom 3: Additivität der Entropie}
+Die Entropie eines zusammengesetzten Systems setzt sich additiv aus den Entropien der Teilsysteme zusammen. Die Entropie ist stetig differenzierter und eine monoton wachsende Funktion der Energie.
+
+\subsection*{Axiom 4: Dritter Hauptsatzes der Thermodynamik}
+Die Entropie eines jeden Systems verschwindet in dem Zustand für den
+\begin{align}
+    \left( \frac{\partial U}{\partial S}\right)_{V, N_i} = 0 
+\end{align}
+gilt, was bei $T = 0$ der Fall ist.
+
+\subsection{Der zweite Hauptsatz der Thermodynamik}
+
+\paragraph{Erster Hauptsatz: Energieerhaltung}
+\begin{align}
+    \underbrace{\increment U}_{\text{Innere Energie}} &= \underbrace{\increment Q}_{\text{Wärme}}-\underbrace{\increment W}_{\text{Arbeit}}
+\end{align}
+\paragraph{Zweiter Hauptsatz}
+Jeder Prozess, der ein thermisch isoliertes System von einen Makrozustand A nach B überführt lässt die Entropie konstant oder führt zu einem Anstieg von $S$.
+\begin{align}
+    \Aboxed{\symup d S \geq 0}
+\end{align}
+
+\begin{align}
+\intertext{Reversibler Prozess:}
+    \increment S_\text{Gesamt} &= 0 = \increment S_\text{System} + \increment S _\text{Umgebung} \\
+\intertext{Irreversibler Prozess:}
+    \increment S_\text{Gesamt} &> 0
+\intertext{Entropiefunktional:}
+    S[\hat \rho] &= -k_\text{B} \Tr[\hat \rho \ln(\hat \rho)]\\
+    \frac{\symup{d}}{\symup{d}t}\hat \rho(t) &= \frac{i}{\hbar} [\hat \rho, H] \quad \text{von-Neumann-Gleichung}\\
+    \rho(t)&= \symup{e}^{-\frac{i}{\hbar}Ht}\ \rho_0\ \symup{e}^{\frac{i}{\hbar}Ht} = U^\dagger(t) \rho_0 \hat U(t) \\
+    S(t) &= S[\hat \rho(t)] = -k_\text{B} Tr[\hat U^\dagger(t) \rho_0 \hat U(t) \underbrace{\ln(\hat U^\dagger(t) \rho_0 \hat U(t))}_{\sum_{n=0}^\infty \frac{a_n}{n!}X_n}] \\
+    &= -k_\text{B} Tr[\rho_0\ln\rho_0] = S[\rho_0]= \text{const.}
+\end{align}
+
+\subsection{Behandlung von teiloffenen Systemen}
+
+\paragraph{Die kanonische Gesamtheit}
+Definition: $N =$ const. , Energieaustausch
+\begin{align}&
+    E=\Braket{\hat H} = \text{const. , durch das Bad aufgeprägt}\\
+    \Aboxed{S \leftrightarrow Bad}
+\end{align}
+\paragraph{Q: Was ist $\hat \rho$?}
+\begin{align}
+     I [ \rho] &= S[\rho] - \underbrace{\gamma (\Braket{H}-E)}_{\text{Energieinhalt}} -\underbrace{\lambda (\Braket{\hat 1}-1)}_{\text{Norm}}\\
+    [\gamma]&=[\frac{k_\text{B}}{E}]   \: \: , [\lambda]=[k_\text{B}]\\
+    \delta I &= 0
+\end{align}
+\newpage
+\subsection*{Beschreibung}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        mikroskopisch & makroskopisch \\
+        \toprule \\
+        $i \hbar \partial_t \Ket{\Psi(t)} = \hat H \Ket{\Psi}$& Freie Energie \\
+        $\dot q_i = \frac{\partial H}{\partial p_i}$ & $F(V,T)=U-T\underbrace{S}_{\text{Entropie}}$\\
+        $\dot p_i = \frac{\partial H}{\partial q_i}$ & $S=-\left(\frac{\partial F}{\partial T}\right)_V$ \\
+        \ & $p = - \left(\frac{\partial F}{\partial V}\right)_T$\\
+        \ & $U = F+ TS = U(V, S)$\\
+        \ & Thermodynamik \\
+    \end{tabular}
+    \caption{Beschreibung}
+    \label{tab:1}
+\end{table}
+$\longleftrightarrow$
+Statistik: $\hat \rho , \rho( {q_i, p_i})$
+
+\paragraph{Kanonische Gesamtheit}
+
+\begin{align}
+\intertext{$E = \Braket{H} \quad$ Konstant, durch ein Bad reguliert}
+    \I[\hat{\rho}] &= S[\hat{\rho}] - \lambda(\underbrace{\Braket{\hat{\mathbb 1}}}_{\Tr[\hat\rho]}-1)
+    +\gamma\left(\Braket{\hat H}-E\right)\\ 
+\intertext{Maximum der Entropie}
+    \I[\hat \rho + \delta \rho ]-\I[\rho] &= -k_\text{B} \Tr[\delta \rho \underbrace{(\ln(\rho) + 1 + \frac{\lambda}{k_\text{B}}+ \frac{\gamma}{k_\text{B}}\hat{H}}_{=0}] = 0 \\
+\intertext{$\delta \rho$ beliebig}\\
+    \Rightarrow \ln(\hat \rho) + &1+ \lambda_0 + \frac{\gamma}{k_\text{B}}\hat H = 0\\
+    \Aboxed{\hat \rho &= \symup{e}^{-(1 + \lambda_0)} \symup{e}^{-\frac{\gamma }{k_\text{B}}\hat H}}
+\end{align}
+
+\begin{align}
+    \intertext{Def: $\beta=\frac{1}{k_\text{B}T}=\frac{\gamma}{k_\text{B}}$}
+    \Tr[\rho]&=1 \Rightarrow \symup{e}^{-(1+\lambda_0)}=\frac{1}{\Tr[\symup{e}^-\beta \hat H]}\\ 
+    \hat{\rho} & = \frac{1}{Z_\text{kan}} \symup{e}^{-\beta\hat{H}}, \quad \text{$Z_\text{kan}$ Kanonische Zustandssumme}\\
+    Z_\text{kan} &= \Tr[\symup{e}^{-\beta \hat H}] \\
+    E &= \Braket{H} = \frac{1}{Z_\text{Kan.}} \Tr[\symup{e}^{-\beta \hat H} \hat H] = -\frac{\partial}{\partial \beta}\ln(Z_\text{kan}(\beta))
+\intertext{Entropie}
+    S_\text{kan}&=S[\hat\rho_\text{kan}]=-k_\text{B} \Tr\left[\underbrace{\frac{1}{Z_\text{kan}} \symup{e}^{-\beta \hat H}}_{\rho}\ln\left(\frac{1}{Z_\text{kan}}e^{-\beta H}\right)\right] \\
+    &=k_\text{B} \ln(Z_\text{kan})+\underbrace{k_\text{B}\beta}_{\sfrac{1}{T}}\Braket{H} \\
+    U &= \Tr [\rho H]\Braket{H} = T S_\text{kan}  \underbrace{-\underbrace{k_\text{B} T}_{\sfrac{1}{\beta}}\ln(Z_\text{kan})}_{+ F} = T S_\text{kan}+F=\Tr[\rho H]\\ 
+    &= T S_\text{kan} + \left( - \frac{1}{\beta} \ln(Z_\text{kan}\right)\\
+    \Aboxed{&\frac{\partial U}{\partial S_\text{kan}}=T}
+\end{align}
+
+\begin{enumerate}
+    \item \begin{align}
+        F[\hat\rho]&=U[\hat\rho]-TS[\rho]\\
+        \delta F&=...=-T\delta I[\hat\rho]: \text{ Maximierung der Entropie $\hat=$ Minimierung von $F$}
+        \end{align}
+    \item \begin{align}
+        F(T=0) &= \lim_{\beta \rightarrow \infty} F(\beta)\\
+        T &=0 \quad \text{ist für endliches $\beta$  nicht erreichbar}\\
+        \end{align}
+    \item Gleichgewicht
+        % Bild 11
+        \begin{align}
+            S&=S_1+S_2 \quad \text{const.}\\
+            U&=U_1+U_2 \quad \text{const.}\\
+            \dif U&= 0 = \dif U_1+\dif U_2 \quad \text{Energieerhaltung}\\
+            \dif S&= 0 = \left(\frac{\partial S_1}{\partial U}\right)\symup{d}U_1 + \left(\frac{\partial S_2}{\partial U}\right)\symup{d}U_2\\
+            &=\frac{1}{T_1} \symup{d}U_1 + \frac{1}{T_2} (-\symup{d}U_1)\\
+            &= \left( \frac{1}{T_1}-\frac{1}{T_2} \right) \symup{d}U_1 = 0\\
+            &\Rightarrow\text{Temperaturen müssen gleich sein} T_1=T_2
+        \end{align}
+\end{enumerate}
