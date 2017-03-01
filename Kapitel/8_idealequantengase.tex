@@ -2,9 +2,9 @@
 \subsection{Ideales Fermigas}
 
 \begin{align}
-    H &= \sum_j \epsilon_j  \hat n_j 
+    H &= \sum_j \epsilon_j  \hat n_j
 \end{align}
-Freies Teilchen (Raum, Festkörper) 
+Freies Teilchen (Raum, Festkörper)
 \begin{align}
     \epsilon_{\vec k, \sigma} &= \frac{\hbar^2 \vec k^2}{2m^*} +\frac12 g^* \mu_B \sigma |\vec B| \\
 \intertext{Großkanonische Zustandssumme}
@@ -35,14 +35,14 @@ Freies Teilchen (Raum, Festkörper)
   %\label{fig:Bild}
 \end{figure}
 \begin{align}
-    &= \frac{\e^{-\beta(\epsilon_j - \mu)}}{1+e^{-\beta(\epsilon_j - \mu)}} = \frac{1}{1 + e^{\beta(\epsilon_j - \mu)}+1} = \underarrow{f(\epsilon_j-\mu)}{\text{Fermi-Funktion}} 
+    &= \frac{\e^{-\beta(\epsilon_j - \mu)}}{1+e^{-\beta(\epsilon_j - \mu)}} = \frac{1}{1 + e^{\beta(\epsilon_j - \mu)}+1} = \underarrow{f(\epsilon_j-\mu)}{\text{Fermi-Funktion}}
 \end{align}
 \paragraph{Großkanonisches-Potential}
 \begin{align}
     \Phi(T,\mu)=-\frac{1}{\beta}\ln Z_{\text{gk}}=-k_B T\sum_{j=1}^{\infty} \ln\left(1+\e^{-\beta(\epsilon_j-\mu)}\right)
 \end{align}
 \paragraph{Teilchenzahl}
-\begin{align} 
+\begin{align}
     N &= -\pdif{\Phi}{\mu} = \frac{1}{\cancel{\beta}} \sum_{j=1}^{\infty} \underbrace{\frac1{1+\e^{-\beta(\epsilon_j - \mu)}} \cancel{\beta} \e^{-\beta (\epsilon_j - \mu)}}_{f(\epsilon_j - \mu)} \\
     N&=\sum_{j=1}^\infty \Braket{\hat n_j}=\sum_{j=1}^\infty f(\epsilon_j-\mu)
 \end{align}
@@ -52,7 +52,7 @@ Freies Teilchen (Raum, Festkörper)
 \end{align}
 \paragraph{Entropie}
 \begin{align}
-    S &= -\pdif{\Phi}{T} = \left(\pdif{\Phi}{\beta}\right) \left(\pdif{\beta}{T}\right) = k_\text{B} \beta^2 \pdif{\Phi}{\beta} \\  
+    S &= -\pdif{\Phi}{T} = \left(\pdif{\Phi}{\beta}\right) \left(\pdif{\beta}{T}\right) = k_\text{B} \beta^2 \pdif{\Phi}{\beta} \\
     \pdif{\Phi}{\beta}&= \frac{1}{\beta^2} \ln Z_{\text{gk}}-\frac{1}{\beta} \sum_j \pdif{}{\beta} \ln Z_j\\
     &=\frac{1}{\beta^2} \ln Z_\text{gk}-\frac{1}{\beta^2} \sum_j \frac{1}{1+\e^{-\beta(\epsilon_j-\mu)}} \beta \left(-(\epsilon_j -\mu)\right) \e^{-\beta}\\
     &= \frac{1}{\beta^2} \ln Z_\text{gk} + \frac{1}{\beta^2} \sum_j \beta(\epsilon_j - \mu) f_j \\
@@ -65,7 +65,7 @@ Freies Teilchen (Raum, Festkörper)
     S&= -k_B\sum_{j=1}^\infty \left( P_j^0 \ln P_j^0 + P_j^1 \ln P_j^0 \right) \checkmark
 \end{align}
 
-Dispersion eines freien Teilchens 
+Dispersion eines freien Teilchens
 \begin{align}
     \epsilon_{\vec k} &= \frac{\hbar^2 k^2}{2m}\\
     \Rightarrow U&=\sum_j \epsilon_j f(\epsilon-\mu)=\sum_{\vec k \sigma} \epsilon_{\vec k \sigma} \underarrow{f}{\text{Fermifunktion hängt nur von der Energie ab!}}(\epsilon_{\vec k \sigma}-\mu) \\
@@ -105,7 +105,7 @@ Zustandsdichte
     %\frac{\dif^{n-1}I(\epsilon)}{\dif\epsilon^{n-1}}\biggr\rvert_{\epsilon = \mu} \underbrace{\int_{-\infty}^\infty \dif \epsilon \left(-\pdif{f}{\epsilon} \right) (\epsilon - \mu)^\mu}_{=0 \text{für n ungerade}}
     \int_{-\infty}^\infty (\epsilon - \mu)^{2n} \left(-\pdif{f}{\epsilon}\right) &= \underbrace{\beta \int_{-\infty}^\infty \dif \epsilon}_{\dif x}(\beta(\epsilon - \mu))^{2n} \frac{\e^{\beta (\epsilon-\mu)}}{(\e^{\beta (\epsilon-\mu)}+1)^2} \frac{1}{\beta^{2n}} \\
     &= (k_B T )^{2n}  \int_{-\infty}^\infty \dif x x^{2n} \frac{\e^{x}}{(\e^{x}-1)^2} = (k_B T)^{2n} A_{2n}\\
-    f(\epsilon) = \frac1{\e^{\beta \epsilon}+1} \qquad x &= \beta(\epsilon - \mu) \qquad \dif x = \beta \dif \epsilon 
+    f(\epsilon) = \frac1{\e^{\beta \epsilon}+1} \qquad x &= \beta(\epsilon - \mu) \qquad \dif x = \beta \dif \epsilon
 \end{align}
 %
 \begin{figure}[H]
@@ -115,7 +115,7 @@ Zustandsdichte
   %\label{fig:Bild}
 \end{figure}
 %
-\paragraph{$\Rightarrow$ Riemannsche $\zeta$-Funktion} 
+\paragraph{$\Rightarrow$ Riemannsche $\zeta$-Funktion}
 \begin{align}
     \tdif{}{\lambda} \left(\frac{1}{\e^{\lambda x}+1}\right) &= - \frac{x \e ^{\lambda x}}{(\e^{\lambda x} +1)^2} \\
     A_{l = 2n} &= \int_{-\infty}^{\infty} \dif x x^l \frac{\e^x}{\left(\e^x + 1 \right)^2} = -2 \tdif{}{\lambda} \underbrace{\left[ \int_{-\infty}^{\infty} \dif x x^{l-1} \frac1{\e^{\lambda x} + 1} \right]}_{u = \lambda x \quad \dif u = \lambda \dif x}\\
@@ -151,7 +151,7 @@ Zustandsdichte
   %\label{fig:Bild}
 \end{figure}
 \begin{align}
-    \epsilon_k&=\frac{\hbar^2 k^2}{2 m} \qquad 3D:  \quad \rho \approx \sqrt{\epsilon} \quad \rho'(\mu)>0 
+    \epsilon_k&=\frac{\hbar^2 k^2}{2 m} \qquad 3D:  \quad \rho \approx \sqrt{\epsilon} \quad \rho'(\mu)>0
 \end{align}
 \begin{figure}[H]
   \centering
@@ -161,7 +161,7 @@ Zustandsdichte
 \end{figure}
 \begin{align}
     U(T)-\frac{U(T=0)}{V} &= 2\left[\underarrow{(\mu(T)-\mu_0)}{\cancel{-\frac{\pi^2}{6}\frac{\rho'(\mu)}{\rho(\mu)}(k_B T)^2}}\mu_0\rho(\mu_0))+\frac{\pi^2}{6} (\rho(\mu_0)+\cancel{\mu_0 \rho'(\mu_0)})(k_B T)^2+...\right] \\
-    &= \frac{\pi^2}{3} \rho(\mu_0) (k_B T)^2 
+    &= \frac{\pi^2}{3} \rho(\mu_0) (k_B T)^2
 \end{align}
 
 \paragraph{Spezifische Wärme}
@@ -171,11 +171,11 @@ Zustandsdichte
 \intertext{Gamma-Koeffizient: $\gamma = 2 U_B^2 \rho(\mu_0)\frac{\pi^2}{3}V$}
     C_v &\propto T \quad \text{und verschwindet für $T \to 0$}\\
     \sum_{\vec k} \underarrow{I(\epsilon_{\vec k})}{\delta(\epsilon-\epsilon_k) \epsilon=\frac{\hbar^2}{2m}k^2}&=\frac{V}{(2\pi)^d} \int \dif^d k \quad \quad \int\dif^d k=\int_0^\infty \dif k k^{d-1} O_d\\
-    \rho(\epsilon) &= 
+    \rho(\epsilon) &=
     \begin{cases}
     a\frac{1}{\sqrt{\epsilon}} &d=1\\
     a   &d=2\\
-    a\sqrt{\epsilon}  &d=3 
+    a\sqrt{\epsilon}  &d=3
     \end{cases} \qquad = a_x\epsilon^x
 \end{align}
 \begin{align}
@@ -184,7 +184,7 @@ Zustandsdichte
     \int\dif\epsilon\rho(\epsilon)&=a \int \dif \epsilon \epsilon^x =\frac{a}{1+x}\epsilon^{1+x}=\frac{\epsilon}{1+x}\rho(\epsilon)
 \intertext{Druck: (Zustandsgleichung)}
     p&=-\pdif{\Phi}{V}=2 k_B T \int_{-\infty}^\infty \dif \epsilon \rho(\epsilon) \ln(1+\e^{-\beta(\epsilon-\mu)}) \\
-    &=2k_B T \left[\frac{\epsilon}{1+x}\rho(\epsilon) \ln(1+\e^{-\beta(\epsilon-\mu)})\right]_{-\infty}^\infty \\ 
+    &=2k_B T \left[\frac{\epsilon}{1+x}\rho(\epsilon) \ln(1+\e^{-\beta(\epsilon-\mu)})\right]_{-\infty}^\infty \\
     &\quad -\frac{1}{1+\epsilon}\int_{-\infty}^\infty \dif \epsilon \epsilon \rho(\epsilon) \underbrace{\frac{\beta \e^{-\beta(\epsilon-\mu)}}{1+\e^{-\beta(\epsilon-\mu)}}}_{-\beta f(\epsilon-\mu)}\\
     p &= \frac1{1+x} \underbrace{2 \int_{-\infty}^{\infty} \dif \epsilon \rho(\epsilon) \epsilon f(\epsilon - \mu)}_{\frac{U}{V}}\\
     \Rightarrow \Aboxed{pV &= \frac1{1+x}}\\
@@ -210,7 +210,7 @@ Zustandsdichte
     \text{Beispiel: } \epsilon_{\vec k} &= \frac{\hbar^2 k^2}{2m} \qquad 3D\\
     \Phi(T,\mu,V) &= - \frac{1}{\beta} \ln(Z_\text{gk}) = - k_\text{B} T \frac{2 V}{(2 \pi)^3} \int \dif^3k \ln \left( 1 + z \e^{-\beta \frac{\hbar^2 k^2}{2m}}  \right)\\
     z&=\e^{\beta \mu} \qquad \text{Fugazität} \\
-    x &= k \sqrt{\frac{\beta \hbar^2}{2m}}; \quad \dif x = \hbar \sqrt{\frac{\beta}{2m}} \dif k \\ 
+    x &= k \sqrt{\frac{\beta \hbar^2}{2m}}; \quad \dif x = \hbar \sqrt{\frac{\beta}{2m}} \dif k \\
     \Phi &= - k_\text{B} T \frac{2 V}{(2 \pi)^3} \left(\sqrt{\frac{2m}{\beta \hbar^2}}\right)^3 4 \pi \int_0^\infty \dif x\ x^2 \ln(1 + z \e^{-x^2})\\
 \intertext{Thermische de-Broglie-Wellenlänge:}
     \lambda_T(T) &= \frac{2 \pi \hbar}{\sqrt{2 \pi m k_\text{B}}} = \sqrt{\frac{2\pi \beta \hbar^2}{m}} \\
@@ -233,10 +233,10 @@ Zustandsdichte
     z\rightarrow 0: f_{\frac{3}{2}(\frac{5}{2})}(z)&\approx z-\frac{z^2}{2^{\frac{3}{2}(\frac{5}{2})}}\\
 \intertext{Aus \eqref{eqn:zeile205}}
     \text{0. Näherung:} z_0 &= \frac{n \lambda_T^3}{2} \quad ; n= \frac NV \\
-    \frac{n \lambda_T}{2} &= f_\frac32 (z) = z_0 = z_1 \left(1 - \frac{z_0}{2^\frac32}\right)\\ 
+    \frac{n \lambda_T}{2} &= f_\frac32 (z) = z_0 = z_1 \left(1 - \frac{z_0}{2^\frac32}\right)\\
     z_1 &\approx \frac{z_0}{1-\frac{z_0}{2^\frac{3}{2}}} \approx z_0\left(1+\frac{z_0}{2^{\frac{3}{2}}}\right) \\
     pV &= \frac{k_\text{B}T}{\lambda_T^3} \frac{2V}{N} \left[ \underarrow{z}{z_1} - \underarrow{z^2}{z_0^2}\frac{1}{2^{\frac{5}{2}}} + \mathcal O(z^3)\right]\cdot N\\
-    &= k_B T N \cancel{\frac1z_0} \cancel{z_0} \left[1+ \frac{z_0^2}{2^\frac32} -\frac{z_0}{2^\frac52} + O(z_0^2)\right]\\ 
+    &= k_B T N \cancel{\frac1z_0} \cancel{z_0} \left[1+ \frac{z_0^2}{2^\frac32} -\frac{z_0}{2^\frac52} + O(z_0^2)\right]\\
     pV&=k_\text{B}TN\left[\underarrow{1}{\text{Ideales Gas}\hspace{2cm}}+\underarrow{\frac{n \lambda_T^3}{2}\frac{1}{2^{\frac52}}}{\hspace{2cm}\text{Quantenkorrekturen}}+O(z_0^2)\right]
 \end{align}
 \subsection{Das ideale Bose-Gas}
@@ -263,14 +263,14 @@ Zustandsdichte
 \begin{align}
 \intertext{Bose-Funktion singulär bei $\beta x \to 0$}
     \e^{\beta x} \approx 1 + \beta x \\
-    \Rightarrow g(x) &= \frac{1}{e^{\beta x} -1} \approx \frac{1}{1+\beta x -1} \approx \frac{1}{\beta x} \\ 
-    g(x) &< 0 \quad \text{für} \quad x < 0 \\ 
+    \Rightarrow g(x) &= \frac{1}{e^{\beta x} -1} \approx \frac{1}{1+\beta x -1} \approx \frac{1}{\beta x} \\
+    g(x) &< 0 \quad \text{für} \quad x < 0 \\
     g(x) &= \frac{1 - \e^{\beta x} + \e^{\beta x}}{\e^{\beta x} - 1} = -1 + \frac{\e^{\beta x}}{\e^{\beta x} -1} \to -1 - \e^{\beta x} \quad \text{für} \quad \beta x \to - \infty \\
     \text{Da }
     &\begin{drcases*}
      n_k= \Braket{\hat n_k} & $\geq 0$\\
      \text{und} \ \epsilon &$\geq 0$
-    \end{drcases*} %hoffentlich klappt das 
+    \end{drcases*} %hoffentlich klappt das
     \Rightarrow \mu \leq 0\\
     N &= V \int_0^\infty \dif \epsilon \underarrow{\rho(\epsilon)}{a_q \epsilon^{\frac{d-2}{2}}} g(\epsilon-\mu)\geq V a \int_{0}^{\infty} \dif \epsilon \ \epsilon^{\frac{d}{2} - 1} \underbrace{\e^{-\beta(\epsilon - \mu)}}_{\e^{\beta \mu}} \e^{-\beta \epsilon} \frac{\beta^{\frac{d}{2}-1}}{\beta^{\frac{d}{2}-1}} \frac{\beta}{\beta} \\
     &= Va \beta^{-\frac{d}{2}}\e^{\beta\mu}\underbrace{\int_0^\infty \dif x \e^{-x} x^{\frac{d}{2}-1}}_{A} \\
@@ -282,7 +282,7 @@ Zustandsdichte
     \Rightarrow \mu(T) &\approx-bk_\text{B}T\\
     \Rightarrow N &\approx \frac1{\e^b -1} \\
     b &\approx \ln \left( 1 + \frac1{N} \right) \approx \frac1{N} \\
-    M_k&=\sum_{\vec k}(\epsilon_{\vec k}^k g(\epsilon-\mu)=g_0 \delta_{k,0}+\sum_{\vec k, \epsilon_{\vec k}g_0} (\epsilon_{\vec k})^k g(\epsilon-\mu)  
+    M_k&=\sum_{\vec k}(\epsilon_{\vec k}^k g(\epsilon-\mu)=g_0 \delta_{k,0}+\sum_{\vec k, \epsilon_{\vec k}g_0} (\epsilon_{\vec k})^k g(\epsilon-\mu)
 \end{align}
 \paragraph{Ideales Bose-Gas}
 \begin{align}
@@ -325,7 +325,7 @@ Zustandsdichte
     \lim_{z \to 1^-} g_{\frac d2}(z) &\to 0 \\
     \Rightarrow \lambda_T(T\to0) &\to \infty \qquad \text{kann sich $N_0$ stetig ändern}\\
 \intertext{$\Rightarrow$ Es gibt keine Kondensation in den  Grundzustand in 1D und 2D}
-    d=3g_{\frac32}(1)=\sum_{l=1}^\infty \frac{1}{l^{\frac32}}&= \zeta\left(\frac 32\right) = \num{2.612} ... < \infty  
+    d=3g_{\frac32}(1)=\sum_{l=1}^\infty \frac{1}{l^{\frac32}}&= \zeta\left(\frac 32\right) = \num{2.612} ... < \infty
 \intertext{kritische Temperatur $T_c$}
     \frac{\lambda_T(T_c)}{v}&=g_{\frac32}(1) \quad \Rightarrow \frac{1}{g_3(1)} > \frac{v}{{\lambda_T}^3}\\
     \kB T_C  &= \frac{2 \pi \hbar^2 }{M (v \zeta(\frac32))^{\frac23}} \propto \frac1M \\
@@ -338,7 +338,7 @@ Zustandsdichte
     \text{Falls} N \to \infty \quad \Rightarrow \text{Zwei Fälle} \\
     z&=
     \begin{cases}
-         1 & \text{für} \frac{v}{\lambda_T^3}< \frac{1}{g_{\frac{3}{2}}(1)} \quad (T<T_c)\\   
+         1 & \text{für} \frac{v}{\lambda_T^3}< \frac{1}{g_{\frac{3}{2}}(1)} \quad (T<T_c)\\
         \text{Lösung } \frac{v}{\lambda_T^3} = \frac1{g_\frac32(z)} & \text{für } \frac v\lambda_T^3 \geq \frac{1}{\zeta(\frac32)}
     \end{cases}
     \intertext{Grundzustands Besetzung}
@@ -360,27 +360,35 @@ Zustandsdichte
     \underarrow{\frac{N_0}{N}}{N_0\hat=\text{Grundzustands Besetzung}}&=
     \begin{cases}
         0 & v>v_c \\
-        1-\frac{v}{v_c} \hat= 1- \left(\frac{T}{T_c}\right)^2  & (\text{für } v<v_c , T<T_c) 
+        1-\frac{v}{v_c} \hat= 1- \left(\frac{T}{T_c}\right)^2  & (\text{für } v<v_c , T<T_c)
     \end{cases}\\
     v_c(T) &= \frac{\lambda_T^3(T)}{\zeta\left({\frac32}\right)} \quad \lambda_T = \frac{h}{\sqrt{2\pi M \kB T}} \\
-    z &= e^{\beta \mu} = 
+    z &= e^{\beta \mu} =
     \begin{cases}
         1 \quad \text{für} & \frac{v}{\lambda_T^3}\leq \frac{1}{\zeta{\frac32}}\\
         \text{Lösung von } & \frac{v}{\lambda_T^3} = \frac1{g_{\frac32}(z)}
     \end{cases}
-\end{align} 
+\end{align}
 
-%Bild33
-
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/33.pdf}
+  \caption{.}
+  %\label{fig:Bild}
+\end{figure}
 
 \paragraph{Zustandsgleichung}
 
 \begin{align}
-    \frac{p}{\kB T}=\frac{1}{\lambda_T^3}g_\frac52(z) 
+    \frac{p}{\kB T}=\frac{1}{\lambda_T^3}g_\frac52(z)
 \end{align}
 
-%p-T Diagramm: #caption 
-%Bild34
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/34.pdf}
+  \caption{p-T Diagramm.}
+  \label{fig:p-T Diagramm}
+\end{figure}
 
 \begin{align}
     p_c(T)&=P(v_c(T),T) \\
@@ -399,12 +407,12 @@ Form einer Clausius--Clapeyron-Gleichung
     \intertext{Annahmen}
     v(\text{Grundzustand})&=0\\
     v(\text{Rest})&=v_c \\
-    \intertext{Zwei-Phasen-Modell:} 
-    \intertext{\quad \quad 1. Phase: Grundzustandskondensat} 
-    \intertext{\quad \quad 2. Phase: Rest aller Anregung $\epsilon>\epsilon_0=0$} 
+    \intertext{Zwei-Phasen-Modell:}
+    \intertext{\quad \quad 1. Phase: Grundzustandskondensat}
+    \intertext{\quad \quad 2. Phase: Rest aller Anregung $\epsilon>\epsilon_0=0$}
     \intertext{$T<T_c$ Koexistenz beider Phasen} \\
 \end{align}
-\paragraph{Duhen-Gibbs Relation:} 
+\paragraph{Duhen-Gibbs Relation:}
 \begin{align}
     U&+pV- \mu N -TS =0 \\
     \frac{S}{N\kB}&=\frac{\beta}{N}\left[U+\frac32U-\mu N\right] \\
@@ -431,11 +439,16 @@ Form einer Clausius--Clapeyron-Gleichung
         \frac{15}{4} \frac{v}{\lambda_T^3}g_\frac52(z)-\frac94 \frac{g_\frac32(z)}{g_\frac12(z)} &T>T_c\\
         \frac{15}{4} \frac{v}{\lambda_T^3} \zeta\left(\frac52 \right)\propto T^{\frac32} & T\leq T_c
     \end{cases}
-\end{align} 
-%Bild35
+\end{align}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/35.pdf}
+  \caption{.}
+  %\label{fig:Bild}
+\end{figure}
 Ehrenfest: Phasenübergang 3.Ordnung \\
 
-Bose-Einstein-Kondensation 
+Bose-Einstein-Kondensation
 \begin{enumerate}
     \item Phasenübergang 1.Ordnung in zwei Phasen(Fluid ) Moden
     \item Phasenübergang 3.Ordnung für das Gesamtsystem

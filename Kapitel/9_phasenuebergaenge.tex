@@ -1,5 +1,5 @@
 \section{Phasenübergänge}
-Magnetismus 
+Magnetismus
 \begin{itemize}
     \item $T>T_c$ ungeordnete Momente
     \item $T<Tc$  endliche Magnetisierung
@@ -24,10 +24,16 @@ Modell: Heisenberg Modell
 \intertext{Heute: 1D Ising Modell}
 \intertext{$N$ Gitterplätze, Periodische Randbedingungen (Ringtopologie): $\sigma_{N+1}= \sigma_1$}
 \end{align}
-%%%%%Bild 36%%%%%caption: das N-te Teilchen wechselwirkt mit dem Ersten
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/36.pdf}
+  \caption{das N-te Teilchen wechselwirkt mit dem Ersten.}
+  %\label{fig:Bild}
+\end{figure}
+
 \begin{align}
     H &= \sum_j H_j \quad ,\hat\sigma_j=2\hat S_{j,z}\\
-    \hat H_j &= -J\hat\sigma_j \hat\sigma_{j+1}\\ 
+    \hat H_j &= -J\hat\sigma_j \hat\sigma_{j+1}\\
     \text{Ising-Basis:} &\Ket{\sigma_1,\sigma_2,...,\sigma_j,...\sigma_N} \quad \sigma_j=\pm1\\
     \hat\sigma_j\Ket{\sigma_1,...,\sigma_j,...\sigma_N}&=\hat\sigma_i\Ket{\sigma_1,...,\sigma_j,...\sigma_N}\\
     [H_i, H_j] = 0  \qquad \Rightarrow \e^{-\beta \hat H} &= \prod_{j=1}^N \e^{-\beta \hat{H}_j} \\
@@ -38,7 +44,7 @@ Modell: Heisenberg Modell
     \text{Transfermatrix: } P_{\sigma_j \sigma_{j+1}} &= \Bra{\sigma_j} \e^{-\beta \hat{H}_j} \Ket{\sigma_{j+1}} = \e^{-\beta(-J \sigma_j \sigma_{j+1} +\frac{h}{2}(\sigma_j + \sigma_{j+1})} \\
 \end{align}
 \begin{align}
-    2 \times 2-\text{Matrix:} \quad P &= 
+    2 \times 2-\text{Matrix:} \quad P &=
     \begin{pmatrix}
         \e^{\beta(J-h)} & \e^{-\beta J} \\
         \e^{-\beta J} & \e^{\beta(J+h)} \\
@@ -53,13 +59,13 @@ Modell: Heisenberg Modell
     \tensor P^N &= \left[ \tensor U \tensor D_P \tensor U^-\right]^N = \tensor U \tensor D_P^N \tensor U^{-1}\\
     x&=\e^{\beta J}, \quad y=\e^{-\beta h} \\
     O&=\lvert \tensor P -\lambda \tensor 1 \rvert=
-    \begin{vmatrix} 
+    \begin{vmatrix}
         xy-\lambda & \frac{1}{x} \\
         \frac{1}{x}  & \frac{x}{y}-\lambda\\
     \end{vmatrix} \\
     &=(xy-\lambda)(\frac{x}{y}-\lambda)-\frac{1}{x^2}=\lambda^2-\lambda x(\underarrow{y}{2\cosh(\beta h)}+\frac1y)+x^2-\frac{y}{x^2}=0\\
 \end{align}
-\begin{align}    
+\begin{align}
     y + \frac{1}{y} &= \e^{-\beta H} + \e^{\beta H} = 2 \cosh(\beta h) \\
     x^2 - \frac{1}{x^2} &= \e^{2 \beta J} - \e^{2 \beta J} = \sinh(2 \beta J) \\
     \lambda_{\pm} &= x \cosh(\beta h) \pm \sqrt{x^2 \cosh^2(\beta h) - 2\sinh(2\beta J) } \\
@@ -75,7 +81,7 @@ Modell: Heisenberg Modell
     \lim_{h\to 0}m(h) &= 0 \Rightarrow m\approx h \Rightarrow m=\chi h \qquad (\chi:\text{mag. Suszeptibilität})\\
     &\text{Magnetische Phase: } \lim{h \to 0} m(h) = m_0 \pm 0 \\&(\text{nicht im $1D$ Ising-Modell bei $T>0$})\\
     \chi&=\pdif{m}{h}[h=0]
-\intertext{2 Strategien in der Theorie der Phasenübergänge}    
+\intertext{2 Strategien in der Theorie der Phasenübergänge}
 \end{align}
 
 \begin{enumerate}
@@ -100,7 +106,12 @@ Modell: Heisenberg Modell
     H &= -J \sum_{<i,j>} \vec{S}_i \vec{S}_j \qquad \text{Heisenberg-Modell}\\
     &=J\sum_i \vec S(-J)\underbrace{\sum_{<j,\text{max}>} \vec{S}_j}_{\vec B_i^{\text{eff}}}
 \end{align}
-%Bild 37 caption: Spins koppeln nur mit nächsten Nachbarn
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/37.pdf}
+  \caption{Spins koppeln nur mit nächsten Nachbarn.}
+  %\label{fig:Bild}
+\end{figure}
 \begin{align}
     F[\hat \rho] &= \Braket{\hat H} - T S[\hat \rho] = \Tr[\rho \hat H] + \kB T \Tr[\hat \rho \ln \hat \rho]\\
 \intertext{ist für das Heisenberg Modell nicht exakt lösbar für $D>1$ }
@@ -123,7 +134,13 @@ Frage: Wie wählen wir $\hat \rho_\text{trial}$?
     H_\text{eff}=-\sum_j \vec S_i \vec X_i\\
     [\vec X_i]: &\qquad \text{Energie, klassischer Vektor}
 \end{align}
-%Bild 38 caption: Spin in einem Magnetfeld $\vec x_i$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/38.pdf}
+  \caption{Spin in einem Magnetfeld $\vec x_i$.}
+  %\label{fig:Bild}
+\end{figure}
 \begin{align}
     F[\hat \rho_\text{MF}(\{\vec X_i\})]&=F(\{\vec X_i\})=\Tr[\rho_\text{MF} \hat H]+\kB T \Tr[\rho_\text{MF}(-\beta \hat H_\text{eff} -\ln Z_\text{MF})]\\
     &=\Tr[\rho_\text{MF}(\underarrow{H-H_\text{eff}}{\text{Korrekturterm}\ \Braket{\Delta H}})]-\frac{1}{\beta} \ln Z_\text{MF}
@@ -137,7 +154,7 @@ Frage: Wie wählen wir $\hat \rho_\text{trial}$?
 \begin{align}
     F(\{\vec{x}_i\}) &= - \sum_{i} \Braket{\vec{S}_n} \left( \left(\sum_{j \in NN(n)} J \Braket{\vec{S}_j} \right)  - \vec{x}_n \right) - \frac1{\beta} \ln(Z_\text{MF}) \\
     0 &= \pdif{F}{X_{i,\underarrow{\alpha}{\alpha=x,y,z}}}
-    = \cancel{\Braket{S_{i,\alpha}}} - \sum_n \vec{X}_n \pdif{\Braket{\vec S_n }}{X_{i,\alpha}} - J 
+    = \cancel{\Braket{S_{i,\alpha}}} - \sum_n \vec{X}_n \pdif{\Braket{\vec S_n }}{X_{i,\alpha}} - J
     \underbrace{
         \pdif{}{X_{i,\alpha}} \left(\sum_{\Braket{n,m}} \Braket{\vec S_n} \Braket{\vec S_m}\right)
     }_{
@@ -165,7 +182,7 @@ Hier: $J > $: Ferromagnetismus
 
 \begin{align}
     \vec{x}_n \to \vec{x} &\neq x \vec e_z\\
-    \text{SCG: }\ x &=2 p J\Braket{S_z}  \quad; p = \text{\# nächste Nachbarn} = 2d\\  
+    \text{SCG: }\ x &=2 p J\Braket{S_z}  \quad; p = \text{\# nächste Nachbarn} = 2d\\
     Z_i &= Z=\Tr[\e^{\beta S_z x}]=\sum_{m=-L}^L \e^{\beta m x} \\
     &= \e^{\beta L x} \sum_{m=0}^{2 L} e^{-\beta m x}=\e^{\beta L x} \frac{\e^{-\beta(2L+1)x}-1}{\e^{-\beta x}-1}\\
     &= \frac{\e^{-\beta (L+1)x} - \e^{\cancel{-}\beta L x}}{\e^{-\beta x} - 1 } \frac{\e^{\beta \frac L2 x}}{\e^{\beta \frac L2 x}} = \frac{\sinh \left(\left(L + \frac12\right)\beta x\right)}{\sinh \left(\frac L2 \beta x\right)}\\
@@ -181,7 +198,7 @@ Hier: $J > $: Ferromagnetismus
     &= \frac{\overbrace{\cancel{2} (\e^{2x} + \e^{-2x}) - (\cancel{\e^{2x} + \e^{-2x}} + 2)}^{4 \sinh^2(x)}}{(+) (-)} \\
     &=\frac{\cancel{4}\sinh^{\cancel{2}}(x)}{\cancel{4}\cancel{\sinh(x)}\cosh(x)}=\tanh{x}\\
     \Aboxed{x &=  pJ \tanh(\beta \frac x2)}
-\end{align} 
+\end{align}
 
 \begin{align}
     \hat \rho_\text{MF} &= \frac 1Z_\text{MF} \e^{-\beta \hat H_\text{eff}}; \qquad H_\text{eff} = -\sum_j \vec S_j \vec X_j\\
@@ -192,18 +209,30 @@ Hier: $J > $: Ferromagnetismus
     B_L{x} &= \frac{2L+1}{2L} \coth(\frac{2L+1}{2L} x) - \frac{1}{2L}\coth(\frac{x}{2L}) \\
 \end{align}
 %Bild 39 caption:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/39.pdf}
+  \caption{.}
+  %\label{fig:Bild}
+\end{figure}
 %Bild 40 caption:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/40.pdf}
+  \caption{.}
+  %\label{fig:Bild}
+\end{figure}
 \begin{enumerate}[i]
     \item Paramagnetische Phase (PM)
     \begin{itemize}
-        \item $\beta$ < $\beta_c$ \quad $T>T_c$ 
+        \item $\beta$ < $\beta_c$ \quad $T>T_c$
         \item $\Braket{S_z} = 0$ \quad $X=0$
     \end{itemize}
     \item Ferromagnetische Phase (FM)
     \begin{itemize}
-        \item $\beta$ > $\beta_c$ \quad $T<T_c$ 
+        \item $\beta$ > $\beta_c$ \quad $T<T_c$
         \item $\Braket{S_z} > 0$ \quad $X>0$
-    \end{itemize}    
+    \end{itemize}
 \end{enumerate}
 
 \begin{align}
@@ -222,24 +251,24 @@ Hier: $J > $: Ferromagnetismus
 
 
 \begin{align}
-    \Braket{S_Z} &= L B_L (\beta L x ) \stackrel{x \to 0}{\approx} \cancel{L} \frac{(L + 1)}{3 \cancel{L}} (\beta L X) + \mathcal O(x^3)\\ 
+    \Braket{S_Z} &= L B_L (\beta L x ) \stackrel{x \to 0}{\approx} \cancel{L} \frac{(L + 1)}{3 \cancel{L}} (\beta L X) + \mathcal O(x^3)\\
     &\text{Mean-Field-Gl.} \quad X \to 0 \\
     X &= 2P J \Braket{S_z} \approx 2P J \frac{L(L+1)}{3} \beta X\\
-    \Rightarrow \Aboxed{\kB T_\text{C} &= 2pJ \frac{L(l+1)}{3}} \\ 
+    \Rightarrow \Aboxed{\kB T_\text{C} &= 2pJ \frac{L(l+1)}{3}} \\
     x &= 0 \qquad \text{für: } \quad T_C < T\\
     x &\neq 0 \qquad \text{für: } \quad T < T_C
 \end{align}
 
-Frage: 
+Frage:
 \begin{itemize}
     \item $x>0$: Thermodynamisch stabil, $F(x) < F(0)$?
-    \item Analytische Form von $X(T)$ 
+    \item Analytische Form von $X(T)$
 \end{itemize}
 
 
 \begin{align}
     F(x) &= - \sum_j \Braket{\vec S_j} \sum_{m \in NN(j)} J \Braket{\vec S_m} - \underarrow{\vec X_j}{X \vec e_z}) - \frac 1\beta \ln(Z_\text{AF}) \\
-    &(NN(j) = \text{\enquote{nearest neighbours of $j$}})\\  
+    &(NN(j) = \text{\enquote{nearest neighbours of $j$}})\\
     &= -N \frac{X}{2pJ} \left( \cancel{p} \frac{\cancel{J} X}{2 \cancel{pJ}} - X \right) - N \ln \left(\frac{\sinh((L+\frac{1}{2}) \beta x)}{\sinh(\beta \frac{x}{2})} \right)  \qquad \Aboxed{ \Braket{S_z} = \frac{X}{2PJ}} \\
     &= N \left[ \frac{X^2}{4 p J} - \frac 1\beta \ln(...)\right]
 \end{align}
@@ -254,7 +283,7 @@ Frage:
     \ln \left( \frac{\sinh(ax)}{\sinh(bx)} \right) &\approx \ln \left( \frac{ ax + \frac{1}{6} (ax)^3 +...}{ bx + \frac{1}{6} (bx)^3 +...} \right)\\
     &= \ln \left(\frac ab \frac{1 + \frac16 (ax)^2 ...}{1 + \frac16(bx)^2 ...} \right) = \ln \left( \frac{a}{b} \right) + \left(\frac{(ax)^2}{6} - \frac{(bx)^2}{6} \right) + \mathcal O(x^4) \\
     &= \ln \left(\frac ab \right) + \frac{x^2}{6} (a^2 - b^2) + \mathcal O(x^4)\\
-    \text{mit:} \quad a &= \beta\left(L + \frac12 \right) \quad b = \frac \beta2\\  
+    \text{mit:} \quad a &= \beta\left(L + \frac12 \right) \quad b = \frac \beta2\\
     \frac{F(x)}{N} &\approx \frac{X^2}{4pJ} - \frac1{\cancel{\beta}} \left[ \ln (2L+1) + \frac{x^2}{6} \frac{\beta^{\cancel{2}}}{\cancel{4}} [\underbrace{(2L+1)^2-1}_{2L(2L+1) = \cancel{4}L(L+1)}]+...\right] \\
     &\approx  T \underbrace{\kB  \ln (2L + 1)}_{\text{Entropie pro Spin}} + \frac{X^2}{4 pJ} - \beta \frac{L(L + 1)}{6} x^2\\
     F &= U - TS
@@ -278,17 +307,29 @@ Frage:
 \intertext{$\beta$: kritischer Exponent des Ordnungsparameters \rightarrow MF-Theorie $\beta = \frac{1}{2}$}
 \end{align}
 %Bild41 caption:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/41.pdf}
+  \caption{.}
+  %\label{fig:Bild}
+\end{figure}
 
 \subsection{Landau-Theorie der Phasenübergänge}
 Räumliche  Mittelung:
 %Bild42 caption: Mittelung
-Allgmeiner: $m(\vec r)$ 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/42.pdf}
+  \caption{Mittelung.}
+  %\label{fig:Bild}
+\end{figure}
+Allgmeiner: $m(\vec r)$
 \begin{align}
     l:\text{mikroskopisch groß aber makroskopisch klein}
 \intertext{Vereinfachung}
 \end{align}
  \begin{enumerate}
-    \item Vernachlässigung von Räumfluktuationen:$m(\vec{r},T) \to m(T)$ 
+    \item Vernachlässigung von Räumfluktuationen:$m(\vec{r},T) \to m(T)$
     \item M sei statisch und verschwindet bei $T=T_c$
         \begin{align}
             m(T>T_c) &= 0\\
@@ -301,6 +342,16 @@ Allgmeiner: $m(\vec r)$
     F(m,H) &\tilde{=} T_0+\frac 12 r_0(T)m^2+U_0 m^4 - m \underarrow{H}{\text{externes Magnetfeld}}
 \intertext{Für $H=0$}
 %Bild43 caption: für H=0
+\end{align}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/43.pdf}
+  \caption{für $H=0$.}
+  %\label{fig:Bild}
+\end{figure}
+
+\begin{align}
 \intertext{Minimierung der Freien Energie}
     \pdif{F}{m}&= r_0(T) m+4 U_0 m^3 -H=0
 \intertext{Für $H=0 \Rightarrow$ zwei Lösungen}
@@ -316,9 +367,9 @@ Allgmeiner: $m(\vec r)$
 \intertext{Entwicklung von $r(T)$ um $T_c$}
     r_0(T) &\approx \underbrace{r_0(T_c)}_{=0}+\overline{a}_0(T-T_c)= \underline{\overline{a}}_0 T_c  \frac{T-T_c}{T_c}=a_0 t\\
     t &= \frac{T-T_c}{T_c} \text{reduzierte Temperatur}\\
-    \Rightarrow \bar{M} &= \sqrt{- \frac{a_0}{4 k_0} t} \underarrow{=}{t<0} \sqrt{\frac{a_0}{4 k_0} |t|} \propto |t|^{frac12} = |t|^{\beta} 
+    \Rightarrow \bar{M} &= \sqrt{- \frac{a_0}{4 k_0} t} \underarrow{=}{t<0} \sqrt{\frac{a_0}{4 k_0} |t|} \propto |t|^{frac12} = |t|^{\beta}
 \intertext{kritischer Exponent $\beta =\frac 12$}
-    F(\overline{m})-F_0&\underarrow{=}{t<0} \frac 12 a_0 t \frac{a_0}{4U_0}\lvert t\rvert+\cancel{U_0}\frac{a_0^2}{16 U_0^{\cancel{2}}}\lvert t\rvert^2=-\frac{1}{16} \frac{a_0^2}{U_0}\lvert t\rvert^2 < 0\\  
+    F(\overline{m})-F_0&\underarrow{=}{t<0} \frac 12 a_0 t \frac{a_0}{4U_0}\lvert t\rvert+\cancel{U_0}\frac{a_0^2}{16 U_0^{\cancel{2}}}\lvert t\rvert^2=-\frac{1}{16} \frac{a_0^2}{U_0}\lvert t\rvert^2 < 0\\
     t|t| &= -|t|^2\\
 \intertext{Suszeptibilität}
     \Chi &= \pdif{m}{H}[H\to 0]\\
@@ -355,6 +406,12 @@ Spezifische Wärme
     T\pdif{\Delta S}{T} &= \frac{a_0^2}{8 U_0}\frac{T}{T_c}>0
 \end{align}
 %Bild 44 caption: $C_V$ hat einen Sprung bei $T_C$
+\begin{figure}[H]
+  \centering
+  \includegraphics[width = \textwidth]{Zeichnungen/43.pdf}
+  \caption{$C_V$ hat einen Sprung bei $T_C$.}
+  %\label{fig:Bild}
+\end{figure}
 \begin{align}
     C_v\propto &\lvert t\rvert^{-\alpha}\\
     \text{Hier } \alpha &=0 \lvert\text{keine Divergenz um $C_v(T\to T_c)$}\\
@@ -378,7 +435,7 @@ In 1D und 2D gibt es keine spontane Symmetriebrechung einer \emph{kontinuierlich
 Sei $\hat\Gamma_s^i$ ein Generator der Symmetrietrafo (Beispiel $\vec{S}(\vec{L})$ erzeugen eine Drehung)
 \begin{align}
     [\hat H,\hat \Gamma_S^i]&=0\\
-\intertext{falls: } 
+\intertext{falls: }
     \hat C_i&=[\hat A ,\hat \Gamma] \qquad (\text{Beispiel }\ S_z=i\hbar[S_x,S_y])
 \intertext{dann gilt:}
     \Braket{\hat C_i} &= \Braket{[A, \Gamma_S^i]} = \Tr [\underarrow{\hat \rho}{\rho = \frac{\e^{-\beta H}}{Z} \Rightarrow [\rho, \Gamma_S^i = 0]} (\hat A \Gamma_s^i - \Gamma_S^i \hat A)] = 0
@@ -392,7 +449,7 @@ Sei $\hat\Gamma_s^i$ ein Generator der Symmetrietrafo (Beispiel $\vec{S}(\vec{L}
     \text{Anti-Ferromagnetisch: } \e^{i \vec \mathcal K \vec R_{j}} &=
     \begin{cases}
         1 & \text{für alle $\vec R_j \in$ Untergitter A}\\
-        -1 & \text{für alle $\vec R_j \in$ Untergitter B}   
+        -1 & \text{für alle $\vec R_j \in$ Untergitter B}
     \end{cases}
 \intertext{Ordungsparameter}
     S_z&=\frac1N \sum_j \Braket{S_j^z}\e^{i\vec \mathcal K \vec R_j} \\
@@ -415,7 +472,7 @@ Sei $\hat\Gamma_s^i$ ein Generator der Symmetrietrafo (Beispiel $\vec{S}(\vec{L}
     \hat A &= \hat S^- (-\vec k-\mathcal K) \\
     [\hat C, \hat A] &= [S^+(\vec k), S^-(-\vec k + \vec \mathcal K)] = 2 \hbar \sum_j S_j^z \e^{\symup i \mathcal K \vec R_j} \cdot \frac NN \\
     \lvert \Braket{[C, A]} \rvert^2 &= 4 \hbar^2 N^2 \lvert S_Z \rvert^2\\
-    \Braket{\{A(\vec k),\hat A^\dagger( \vec k) \}}&=... \leq 2N \sum_i \Braket{\vec S_i^2} \\ &=2N^2\underarrow{\hbar^2}{\text{Spinlänge}} S(S+1) \qquad  
+    \Braket{\{A(\vec k),\hat A^\dagger( \vec k) \}}&=... \leq 2N \sum_i \Braket{\vec S_i^2} \\ &=2N^2\underarrow{\hbar^2}{\text{Spinlänge}} S(S+1) \qquad
     \left(\vec S_1 \vec S_2=\vec S^z_1 \vec S^z_1+\frac 12 (\vec S^+_1 \vec S^-_2- \vec S^-_1 \vec S^+_2)\right) \\
     \tdif{}{t} \hat C &= \frac{\symup i}{\hbar} [\hat C, H] \qquad \text{Fluktuationen von } \hat C \\
     ..........
@@ -435,7 +492,7 @@ Sei $\hat\Gamma_s^i$ ein Generator der Symmetrietrafo (Beispiel $\vec{S}(\vec{L}
 \end{align}
 
 \begin{itemize}
-    \item 1D: 
+    \item 1D:
         \begin{align}
             \int_0^{x_0} \dif x \frac{1}{1 + x^2} = \arctan(x_0)
         \end{align}
@@ -456,14 +513,14 @@ Sei $\hat\Gamma_s^i$ ein Generator der Symmetrietrafo (Beispiel $\vec{S}(\vec{L}
     S_z &\leq \mathcal C \frac{b^\frac13}{T^\frac25}\\
     \lim_{b\to0} S_z &= 0 \\
 \end{align}
-\paragraph{Zwei Raumdimension}   
+\paragraph{Zwei Raumdimension}
 \begin{align}
     S_z^2 < C \frac{1}{T} \frac{1}{\ln(1+\frac{\overline{\omega}}{b S_z})}\\
     |S_z|< \frac{C'}{\sqrt{|T\ln(b)|}}\\
     \lim_{b \to 0} S_z^{2D}(b)=0
 \end{align}
- 
+
 Fin.
-    
-    
+
+
 %z 432 ist nocj kapiutt :D
